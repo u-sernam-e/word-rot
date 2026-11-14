@@ -23,7 +23,9 @@ func get_level_sentence_string(level : int) -> String:
 	return level_sentences[level - 1]
 
 func get_level_sentence_array(level : int) -> Array:
-	var lvl_string = get_level_sentence_string(level)
+	return string_to_array(get_level_sentence_string(level))
+
+func string_to_array(lvl_string : String) -> Array:
 	var lvl_array : Array
 	var end_loop : bool = false
 	var prev_space : int = 0

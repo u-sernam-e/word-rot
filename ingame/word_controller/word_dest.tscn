@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c0j8u4dgkkwo7"]
 
-[ext_resource type="Script" uid="uid://cbvumwajd1ggu" path="res://word/word_dest.gd" id="1_88ywo"]
+[ext_resource type="Script" uid="uid://cbvumwajd1ggu" path="res://ingame/word_controller/word_dest.gd" id="1_88ywo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s2q7c"]
 

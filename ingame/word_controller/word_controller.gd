@@ -1,11 +1,12 @@
 extends Node2D
+class_name WordController
 
 @export var level_sentence : int
 @export var center : Vector2
 const MAX_WIDTH : int = 600
 
 var words : Array[Word] = []
-const word_scene = preload("res://word/word.tscn")
+const word_scene = preload("res://ingame/word_controller/word.tscn")
 
 var is_moving_word : bool = false
 
@@ -24,7 +25,6 @@ func create_words_from_level_sentence():
 		add_child(word)
 		words.append(word)
 		word.text = word_string
-		word.position = Vector2(randf_range(0, 960), randf_range(0, 540))
 		# first check if punctuation
 		if word_string == "." or word_string == "!" or word_string == "?" or word_string == "…" or word_string == ",":
 			word.is_punctuation = true
@@ -44,16 +44,17 @@ func set_up_word_positions():
 			current_row += 1
 			current_row_size = 0
 			for row in range(current_row):
-				print(row)
+				#print(row)
 				move_all_in_row(row, words_row, Vector2(0, -word_size.y*0.5))
 			
-			print("row move up")
-			print(current_row)
-			print("--")
+			#print("row move up")
+			#print(current_row)
+			#print("--")
 		else: # adding to current row
 			# add size of word to current row
 			current_row_size += word_size.x
 			# add the required length to all words in current row
+			# I think this is a little broken
 			move_all_in_row(current_row, words_row, Vector2(-word_size.x*0.5, 0))
 		w.position = Vector2(current_row_size*0.5 - word_size.x*0.5, current_row*word_size.y*0.5)
 		words_row.append(current_row)
@@ -103,6 +104,9 @@ func makeIdArray() -> Array:
 				idArray[destPos] = null
 	return idArray
 
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_up"):
-		print(makeIdArray())
+#func _input(event: InputEvent) -> void:
+	#if event.is_action_pressed("ui_up"):
+		#print(makeIdArray())
+
+func get_made_sententce():
+	return makeIdArray()
