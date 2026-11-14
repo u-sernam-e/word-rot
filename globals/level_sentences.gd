@@ -1,7 +1,9 @@
 extends Node
 
 var level_sentences : Array = [
-	"I don’t want a stupid data center in my backyard .",
+	"",
+	
+	"I don't want a stupid data center in my backyard .",
 	
 	"It breaks my heart how the company has begun to \
 neglect their duties and is destroying all of the \
@@ -16,17 +18,19 @@ This has caused many strong reactions as the company \
 continues to fall out of any good grace with many like \
 minded consumers .",
 	
-	"Please , no more ads ! I really wish the company \
-didn’t jack up the prices of all of their services \
-while they are also adding annoying unavoidable ads \
-to everything unless you pay for their subscription . \
-It is hard to justify and maintain the purchase when \
-I do not know if it will raise in price another one \
-dollar again next month . I wonder if I should cancel \
-my subscription …"
+	"When I worked on this case I was able to work with \
+the defendant to prove that the company had committed \
+the serious crime of embezzling funds . The company was \
+not able to convince the jury that this wrong doing was \
+done without the knowledge of the CEO . This wrong doing \
+is not going to go without a needed punishment that the \
+jury has decided upon ."
 ]
 
-var correct_sentences = [[
+var correct_sentences = [
+	[],
+	
+	[
 	"I want a data center in my backyard",
 	"I want backyard data center",
 	"I want data center",
@@ -43,12 +47,18 @@ var correct_sentences = [[
 	"The strong stock is wild",
 	"Jack like good stock Jack is strong consumer",
 	"Jack like strong stock Jack is good consumer"
+	],
+	[
+	"The company is committed to serious work. Embezzling funds not serious work.",
+	"Serious crime not committed. Embezzling done without CEO knowledge.",
+	"Serious crime not committed. Jury wrong. CEO not wrong.",
+	"Jury needed punishment not CEO. Jury committed the embezzling of funds."
 	]
 
 	]
 
 var min_words = [
-	4, 9, 3, 9, 6, 8, 6, 8, 5, 4, 4
+	0, 4, 9, 3, 9, 6, 8, 6, 8, 5, 4, 4
 ]
 
 var filler_words : Array = [
@@ -56,8 +66,9 @@ var filler_words : Array = [
 ]
 
 var word_dicts : Array = [
+	{},
 	{
-		"don't" : -5,
+		"dont" : -5,
 		"want" : 2,
 		"stupid" : -5,
 		"data" : 1,
@@ -94,6 +105,9 @@ var word_dicts : Array = [
 		"grace" : -2,
 		"like" : 1,
 		"conumer" : 1
+	},
+	{
+		
 	}
 ]
 
@@ -103,11 +117,18 @@ func get_word_array_score(word_array : Array, level : int) -> float:
 	var fixed_array = fully_fixed_array(word_array)
 	var level_dict : Dictionary = word_dicts[level]
 	var score_total = 0.0
+	#print(fixed_array)
 	for word in fixed_array:
-		if level_dict.has(word):
-			score_total += level_dict[word]
+		var apo_fix_word = get_word_no_apostrophe(word)
+		if level_dict.has(apo_fix_word):
+			#print(apo_fix_word)
+			#print(level_dict[apo_fix_word])
+			score_total += level_dict[apo_fix_word]
 	var score_average = score_total/fixed_array.size()
 	return score_average
+
+func get_word_no_apostrophe(word : String) -> String:
+	return word.remove_chars("'")
 
 func is_word_array_perfect_answer(word_array : Array, level : int) -> bool:
 	var fixed_array = fully_fixed_array(word_array)

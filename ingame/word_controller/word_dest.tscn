@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cbvumwajd1ggu" path="res://ingame/word_controller/word_dest.gd" id="1_88ywo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s2q7c"]
+size = Vector2(98, 49)
 
 [node name="WordDest" type="Node2D" unique_id=1209687987]
 script = ExtResource("1_88ywo")
@@ -10,4 +11,9 @@ script = ExtResource("1_88ywo")
 [node name="Area2D" type="Area2D" parent="." unique_id=117345678]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=598553644]
+position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_s2q7c")
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=2035379601]
+color = Color(0, 0, 0, 0.34509805)
+polygon = PackedVector2Array(-45, -20, 45, -20, 45, 20, -45, 20)

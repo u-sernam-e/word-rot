@@ -41,6 +41,7 @@ theme/custom_font="uid://cwg6v46rntqkf"
 [layer_names]
 
 2d_physics/layer_1="Word"
+2d_physics/layer_2="Image"
 
 [physics]
 
