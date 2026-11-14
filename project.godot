@@ -27,11 +27,16 @@ Globals="*uid://c7hetc0sddiwx"
 
 window/size/viewport_width=960
 window/size/viewport_height=540
+window/size/mode=1
 window/stretch/mode="viewport"
 
 [global_group]
 
 Timeline=""
+
+[gui]
+
+theme/custom_font="uid://cwg6v46rntqkf"
 
 [layer_names]
 
