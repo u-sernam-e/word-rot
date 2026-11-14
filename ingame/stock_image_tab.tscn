@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://du3wpkodr17by"]
+
+[ext_resource type="Texture2D" uid="uid://12c32rqtmpyv" path="res://assets/backgrounds/stock_image_tab.png" id="1_cggqs"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_44hd6"]
+atlas = ExtResource("1_cggqs")
+region = Rect2(0, 0, 100, 61)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xehi8"]
+atlas = ExtResource("1_cggqs")
+region = Rect2(100, 0, 100, 61)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tkga4"]
+atlas = ExtResource("1_cggqs")
+region = Rect2(200, 0, 100, 61)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dtfgw"]
+atlas = ExtResource("1_cggqs")
+region = Rect2(300, 0, 100, 61)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ckfgi"]
+atlas = ExtResource("1_cggqs")
+region = Rect2(400, 0, 100, 61)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_13re5"]
+atlas = ExtResource("1_cggqs")
+region = Rect2(500, 0, 100, 61)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o44x0"]
+atlas = ExtResource("1_cggqs")
+region = Rect2(600, 0, 100, 61)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rxdmo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_44hd6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xehi8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tkga4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dtfgw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ckfgi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_13re5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o44x0")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="StockImageTab" type="Node2D" unique_id=1738313370]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1765614140]
+sprite_frames = SubResource("SpriteFrames_rxdmo")
+
+[node name="OpenButton" type="Button" parent="." unique_id=118007238]
+offset_left = -50.0
+offset_top = -1.0
+offset_right = -42.0
+offset_bottom = 30.0
+flat = true
+
+[node name="CloseButton" type="Button" parent="." unique_id=1396811516]
+offset_left = 45.0
+offset_top = -1.0
+offset_right = 53.0
+offset_bottom = 30.0
+disabled = true
+flat = true
