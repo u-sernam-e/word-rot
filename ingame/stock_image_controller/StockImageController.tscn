@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://c4muhs1j44mq4"]
+
+[ext_resource type="Script" uid="uid://dbwix162fvigt" path="res://ingame/stock_image_controller/stock_image_controller.gd" id="1_dxexg"]
+
+[node name="StockImageController" type="Node2D" unique_id=1795656987]
+script = ExtResource("1_dxexg")

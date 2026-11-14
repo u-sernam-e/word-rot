@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://nmlydg4ntifp"]
+
+[ext_resource type="PackedScene" uid="uid://dca6kim0gohpu" path="res://Levels/base_level.tscn" id="1_dhllp"]
+
+[node name="1" unique_id=743927325 instance=ExtResource("1_dhllp")]
+
+[node name="StockImageController" parent="." index="2" unique_id=1795656987]
+position = Vector2(754, 69)
