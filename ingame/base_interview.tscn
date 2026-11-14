@@ -18,6 +18,8 @@ position = Vector2(793.00006, 272)
 scale = Vector2(3, 3)
 sprite_frames = ExtResource("3_4tnpp")
 animation = &"Talking"
+frame = 1
+frame_progress = 0.8809035
 
 [node name="Interviewer" type="AnimatedSprite2D" parent="." unique_id=1809072079]
 position = Vector2(166, 273)

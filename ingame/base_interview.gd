@@ -3,6 +3,11 @@ extends Node2D
 @onready var interviewed: AnimatedSprite2D = $Interviewed
 
 var level_data : Dictionary = {
+	0 : {
+		"chara" : load("res://assets/characters/jen_eric.tres"),
+		"audio" : "place recording here",
+	},
+	
 	1 : {
 		"chara" : load("res://assets/characters/jen_eric.tres"),
 		"audio" : "place recording here",
@@ -59,7 +64,13 @@ var level_data : Dictionary = {
 }
 
 func _ready():
-	interviewed.sprite_frames = level_data[1]["chara"]
+	interviewed.sprite_frames = level_data[LevelTransition.level_count]["chara"]
+	
+	if !level_data[LevelTransition.level_count]["audio"] is String:
+		AudioManager.sound_effect_1.stream = level_data[LevelTransition.level_count]["audio"]
+	
+	play_interview()
 
-func play_audio():
-	pass
+func play_interview():
+	interviewed.play("Talking")
+	AudioManager.sound_effect_1.play()
