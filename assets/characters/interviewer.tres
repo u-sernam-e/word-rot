@@ -1,0 +1,25 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://dqbhej0u1r34l"]
+
+[ext_resource type="Texture2D" uid="uid://80qyamnc2iy8" path="res://assets/characters/interviewer.png" id="1_ylf27"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eehtf"]
+atlas = ExtResource("1_ylf27")
+region = Rect2(0, 0, 111, 178)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2d1np"]
+atlas = ExtResource("1_ylf27")
+region = Rect2(111, 0, 111, 178)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eehtf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2d1np")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]

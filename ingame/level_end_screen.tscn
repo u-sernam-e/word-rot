@@ -45,7 +45,6 @@ _data = {
 
 [node name="LevelEndScreen" type="Node2D" unique_id=2087576714]
 script = ExtResource("1_tb6pa")
-score = -1
 
 [node name="Background" type="Polygon2D" parent="." unique_id=691025245]
 polygon = PackedVector2Array(0, 0, 960, 0, 960, 540, 0, 540)

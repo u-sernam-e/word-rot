@@ -2,25 +2,32 @@
 
 [ext_resource type="Script" uid="uid://cnkkb6qh2p0jk" path="res://Levels/base_level.gd" id="1_3vydx"]
 [ext_resource type="Texture2D" uid="uid://blhem152esylf" path="res://icon.svg" id="1_ujkqx"]
+[ext_resource type="Texture2D" uid="uid://misv0f1xtgl8" path="res://assets/backgrounds/main_background.png" id="2_m1e4t"]
 [ext_resource type="PackedScene" uid="uid://s33077wypp3v" path="res://ingame/word_controller/word_controller.tscn" id="3_ruyyf"]
 [ext_resource type="PackedScene" uid="uid://c4muhs1j44mq4" path="res://ingame/stock_image_controller/StockImageController.tscn" id="4_m1e4t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1j3jd"]
-size = Vector2(933, 142.5)
+size = Vector2(626, 106)
 
 [node name="BaseLevel" type="Node2D" unique_id=743927325]
 script = ExtResource("1_3vydx")
 
+[node name="LevelBackground" type="Sprite2D" parent="." unique_id=1509265304]
+position = Vector2(480.00003, 272)
+scale = Vector2(3, 3)
+texture = ExtResource("2_m1e4t")
+
 [node name="Timeline" type="Area2D" parent="." unique_id=232681049 groups=["Timeline"]]
 
 [node name="Sprite2D" type="Sprite2D" parent="Timeline" unique_id=1021424441]
+visible = false
 modulate = Color(1, 1, 0, 1)
 position = Vector2(466, 309)
 scale = Vector2(7.15625, 1)
 texture = ExtResource("1_ujkqx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Timeline" unique_id=1518796861]
-position = Vector2(467, 309.75)
+position = Vector2(409, 367)
 shape = SubResource("RectangleShape2D_1j3jd")
 
 [node name="TimelineMiddlePos" type="Marker2D" parent="Timeline" unique_id=1800543931]

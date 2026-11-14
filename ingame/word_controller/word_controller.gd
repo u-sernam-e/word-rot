@@ -1,7 +1,7 @@
 extends Node2D
 class_name WordController
 
-@export var level_sentence : int
+var level : int
 @export var center : Vector2
 const MAX_WIDTH : int = 600
 
@@ -12,14 +12,15 @@ var is_moving_word : bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	level = get_parent().level
 	create_words_from_level_sentence()
 	for w in words:
 		w.button_pressed.connect(_word_button_pressed)
-	get_tree().create_timer(0.1).timeout.connect(set_up_word_positions)
+	get_tree().create_timer(0.2).timeout.connect(set_up_word_positions)
 
 # create words from level sentence array
 func create_words_from_level_sentence():
-	var word_array : Array = LevelSentences.get_level_sentence_array(level_sentence)
+	var word_array : Array = LevelSentences.get_level_sentence_array(level)
 	for word_string in word_array:
 		var word = word_scene.instantiate()
 		add_child(word)

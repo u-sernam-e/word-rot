@@ -8,6 +8,13 @@ neglect their duties and is destroying all of the \
 habitats of the friendly animals I have grown to \
 love and care for in my day to day . Stop ruining \
 the environment !",
+
+	"The stock for the company has completely begun \
+to tank after that controversy with the local wild \
+life that was discovered by a lumber jack at work . \
+This has caused many strong reactions as the company \
+continues to fall out of any good grace with many like \
+minded consumers .",
 	
 	"Please , no more ads ! I really wish the company \
 didn’t jack up the prices of all of their services \
@@ -23,17 +30,26 @@ var correct_sentences = [[
 	"I want a data center in my backyard",
 	"I want backyard data center",
 	"I want data center",
-	"I want",
-	"I"
+	"I want center",
 	],
 	[
 	"I love how the company is friendly to the environment",
 	"My heart has grown for company friendly to environment"
+	],
+	[
+	"The stock good",
+	"Stock strong like tank",
+	"The company grace consumers with stock",
+	"The strong stock is wild",
+	"Jack like good stock Jack is strong consumer",
+	"Jack like strong stock Jack is good consumer"
 	]
 
 	]
 
-
+var min_words = [
+	4, 9, 3, 9, 6, 8, 6, 8, 5, 4, 4
+]
 
 var filler_words : Array = [
 	"a", "the", "how", "it", "has", "begun", "to", "in"
@@ -61,6 +77,23 @@ var word_dicts : Array = [
 		"care" : 1,
 		"environment" : 2,
 		"stop" : -1
+	},
+	{
+		"stock" : 4,
+		"company" : 1,
+		"tank" : 2,
+		"controversy" : -2,
+		"wild" : -2,
+		"life" : -2,
+		"discovered" : -1,
+		"lumber" : 2,
+		"work" : 1,
+		"jack" : 5,
+		"strong" : 2,
+		"good" : 2,
+		"grace" : -2,
+		"like" : 1,
+		"conumer" : 1
 	}
 ]
 
@@ -68,7 +101,7 @@ func get_word_array_score(word_array : Array, level : int) -> float:
 	if is_word_array_perfect_answer(word_array, level):
 		return 2
 	var fixed_array = fully_fixed_array(word_array)
-	var level_dict : Dictionary = word_dicts[level-1]
+	var level_dict : Dictionary = word_dicts[level]
 	var score_total = 0.0
 	for word in fixed_array:
 		if level_dict.has(word):
@@ -78,7 +111,7 @@ func get_word_array_score(word_array : Array, level : int) -> float:
 
 func is_word_array_perfect_answer(word_array : Array, level : int) -> bool:
 	var fixed_array = fully_fixed_array(word_array)
-	var check_sentences = correct_sentences[level-1]
+	var check_sentences = correct_sentences[level]
 	var check_arrays = []
 	
 	for s in check_sentences:
@@ -124,7 +157,7 @@ func get_word_array_lowercase(word_array : Array) -> Array:
 
 
 func get_level_sentence_string(level : int) -> String:
-	return level_sentences[level - 1]
+	return level_sentences[level]
 
 func get_level_sentence_array(level : int) -> Array:
 	return string_to_array(get_level_sentence_string(level))

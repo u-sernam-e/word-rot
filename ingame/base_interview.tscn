@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://dvl3crwupnbj4"]
+
+[ext_resource type="Script" uid="uid://q7mw8tgawtxw" path="res://ingame/base_interview.gd" id="1_4tnpp"]
+[ext_resource type="Texture2D" uid="uid://d34iivdmsqxjt" path="res://assets/backgrounds/interview_bg.png" id="1_od2yc"]
+[ext_resource type="SpriteFrames" uid="uid://c8jad112rhilg" path="res://assets/characters/jen_eric.tres" id="3_4tnpp"]
+[ext_resource type="SpriteFrames" uid="uid://dqbhej0u1r34l" path="res://assets/characters/interviewer.tres" id="3_sv106"]
+
+[node name="base_interview" type="Node2D" unique_id=1915588365]
+script = ExtResource("1_4tnpp")
+
+[node name="InterviewBackground" type="Sprite2D" parent="." unique_id=1236728412]
+position = Vector2(480, 270)
+scale = Vector2(3, 3)
+texture = ExtResource("1_od2yc")
+
+[node name="Interviewed" type="AnimatedSprite2D" parent="." unique_id=1237732925]
+position = Vector2(793.00006, 272)
+scale = Vector2(3, 3)
+sprite_frames = ExtResource("3_4tnpp")
+animation = &"Talking"
+
+[node name="Interviewer" type="AnimatedSprite2D" parent="." unique_id=1809072079]
+position = Vector2(166, 273)
+scale = Vector2(3, 3)
+sprite_frames = ExtResource("3_sv106")
+frame_progress = 0.91117287
