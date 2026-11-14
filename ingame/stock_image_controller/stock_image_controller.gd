@@ -9,6 +9,7 @@ const image_scene = preload("res://ingame/stock_image_controller/image.tscn")
 
 var is_moving_image : bool = false
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	create_images()
@@ -63,16 +64,21 @@ func _image_button_pressed(image : StockImage):
 		var areas = image.centerArea.get_overlapping_areas()
 		var shouldGoToOrigin = true
 		for a in areas:
-			if a.is_in_group("Timeline") and not Globals.image_on_timeline:
-				image.moveNode.global_position = a.get_parent().global_position
-				shouldGoToOrigin = false
-				Globals.image_on_timeline = true
+			if a.is_in_group("Timeline"):
+				if not Globals.image_on_timeline:
+					image.moveNode.global_position = Vector2(467, 310)
+					shouldGoToOrigin = false
+					image.on_timeline = true
+					Globals.image_on_timeline = true
 		if shouldGoToOrigin:
 			image.moveNode.position = Vector2(0, 0)
 		image.toggle_move()
 		is_moving_image = false
 	else:
 		if not is_moving_image:
+			if image.on_timeline:
+				image.on_timeline = false
+				Globals.image_on_timeline = false
 			image.toggle_move()
 			is_moving_image = true
 

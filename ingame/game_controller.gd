@@ -2,6 +2,7 @@ extends Node2D
 
 @export var submit_button : BaseButton
 @export var word_controller : WordController
+@export var image_controller: ImageController
 @export var level_end_screen : LevelEndScreen
 
 @export var level : int
