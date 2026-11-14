@@ -2,7 +2,9 @@ extends Node2D
 class_name LevelEndScreen
 
 # -1, 0, or 1
-@export var score_index : int
+var score_index : int
+
+@export var next_scene : PackedScene
 
 var backgroundColors = {
 	-1 : Color.DARK_RED,
@@ -34,7 +36,7 @@ func _ready() -> void:
 func _restart_pressed():
 	get_tree().reload_current_scene()
 func _next_pressed():
-	LevelTransition.change_scene_to("res://Game/main_menu.gd")
+	LevelTransition.change_scene_to(next_scene.resource_path)
 
 func set_score_and_show(score):
 	if score < 0:

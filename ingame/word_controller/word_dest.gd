@@ -1,7 +1,7 @@
 extends Node2D
 class_name WordDest
 
-@export var pos : int
+var pos : int
 
 @onready var area : Area2D = $Area2D
 

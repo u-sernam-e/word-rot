@@ -3,7 +3,7 @@ class_name WordController
 
 var level : int
 @export var center : Vector2
-const MAX_WIDTH : int = 600
+const MAX_WIDTH : int = 300
 
 var words : Array[Word] = []
 const word_scene = preload("res://ingame/word_controller/word.tscn")
@@ -17,6 +17,12 @@ func _ready() -> void:
 	for w in words:
 		w.button_pressed.connect(_word_button_pressed)
 	get_tree().create_timer(0.2).timeout.connect(set_up_word_positions)
+	
+	var count = 0
+	for c in get_children():
+		if c is WordDest:
+			c.pos = count
+			count += 1
 
 # create words from level sentence array
 func create_words_from_level_sentence():

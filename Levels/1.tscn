@@ -1,8 +1,40 @@
 [gd_scene format=3 uid="uid://nmlydg4ntifp"]
 
 [ext_resource type="PackedScene" uid="uid://dca6kim0gohpu" path="res://Levels/base_level.tscn" id="1_dhllp"]
+[ext_resource type="PackedScene" uid="uid://c0j8u4dgkkwo7" path="res://ingame/word_controller/word_dest.tscn" id="2_y0prk"]
+[ext_resource type="PackedScene" uid="uid://skoksthhkqiv" path="res://Levels/2.tscn" id="3_0nkm3"]
 
 [node name="1" unique_id=743927325 instance=ExtResource("1_dhllp")]
 
 [node name="StockImageController" parent="." index="2" unique_id=1795656987]
 position = Vector2(754, 69)
+
+[node name="GameController" parent="." index="3" unique_id=120243097]
+level = 1
+
+[node name="WordController" parent="GameController" index="0" unique_id=149952642]
+position = Vector2(299, 125)
+
+[node name="WordDest" parent="GameController/WordController" index="0" unique_id=1209687987 instance=ExtResource("2_y0prk")]
+position = Vector2(-147, 245)
+
+[node name="WordDest2" parent="GameController/WordController" index="1" unique_id=680958723 instance=ExtResource("2_y0prk")]
+position = Vector2(-45, 246)
+
+[node name="WordDest3" parent="GameController/WordController" index="2" unique_id=1531622047 instance=ExtResource("2_y0prk")]
+position = Vector2(59, 243)
+
+[node name="WordDest4" parent="GameController/WordController" index="3" unique_id=66281063 instance=ExtResource("2_y0prk")]
+position = Vector2(161, 244)
+
+[node name="WordDest5" parent="GameController/WordController" index="4" unique_id=1663313748 instance=ExtResource("2_y0prk")]
+position = Vector2(265, 245)
+
+[node name="WordDest6" parent="GameController/WordController" index="5" unique_id=1142923891 instance=ExtResource("2_y0prk")]
+position = Vector2(369, 248)
+
+[node name="Submit" parent="." index="4" unique_id=1172260094]
+disabled = true
+
+[node name="LevelEndScreen" parent="." index="6" unique_id=2087576714]
+next_scene = ExtResource("3_0nkm3")

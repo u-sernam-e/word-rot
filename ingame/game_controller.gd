@@ -13,14 +13,14 @@ func _ready() -> void:
 	word_controller.level = level
 
 func _process(_delta: float) -> void:
-	submit_button.visible = should_show_button()
+	submit_button.disabled = not should_enable_button()
 
 # only update whether the show button 
 #func _input(event: InputEvent) -> void:
 #	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		
 
-func should_show_button() -> bool:
+func should_enable_button() -> bool:
 	var sentence = word_controller.get_made_sentence()
 	var fixed_sentence = LevelSentences.fully_fixed_array(sentence)
 	if fixed_sentence.size() >= LevelSentences.min_words[level]:
