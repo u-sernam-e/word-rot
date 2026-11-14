@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://ie4e0pgeu2f6"]
+
+[ext_resource type="Script" uid="uid://3j6edhxr4tt" path="res://word/word.gd" id="1_2ihii"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s2q7c"]
+size = Vector2(5, 5)
+
+[node name="Word" type="Node2D" unique_id=394304669]
+script = ExtResource("1_2ihii")
+
+[node name="Move" type="Node2D" parent="." unique_id=618939736]
+
+[node name="Button" type="Button" parent="Move" unique_id=1741341758]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="CenterArea" type="Area2D" parent="Move" unique_id=2111370129]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Move/CenterArea" unique_id=744481273]
+shape = SubResource("RectangleShape2D_s2q7c")

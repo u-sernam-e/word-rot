@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://c00qo6mhwb5ah"]
+
+[ext_resource type="PackedScene" uid="uid://s33077wypp3v" path="res://word/word_controller.tscn" id="1_6uqi0"]
+[ext_resource type="PackedScene" uid="uid://c0j8u4dgkkwo7" path="res://word/word_dest.tscn" id="3_ppyta"]
+
+[node name="Test" type="Node2D" unique_id=172724480]
+
+[node name="WordController" parent="." unique_id=149952642 instance=ExtResource("1_6uqi0")]
+position = Vector2(389, 229)
+level_sentence = 3
+
+[node name="WordDest" parent="WordController" unique_id=1209687987 instance=ExtResource("3_ppyta")]
+position = Vector2(195, 296)
+
+[node name="WordDest2" parent="WordController" unique_id=1647175048 instance=ExtResource("3_ppyta")]
+position = Vector2(261, 294)
+pos = 1
+
+[node name="WordDest3" parent="WordController" unique_id=1553050183 instance=ExtResource("3_ppyta")]
+position = Vector2(324, 291)
+pos = 2

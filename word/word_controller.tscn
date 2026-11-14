@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://s33077wypp3v"]
+
+[ext_resource type="Script" uid="uid://b151ayusettca" path="res://word/word_controller.gd" id="1_1kh8i"]
+
+[node name="WordController" type="Node2D" unique_id=149952642]
+script = ExtResource("1_1kh8i")
+level_sentence = 1

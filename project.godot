@@ -11,8 +11,13 @@ config_version=5
 [application]
 
 config/name="WordRot"
+run/main_scene="uid://c00qo6mhwb5ah"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+LevelSentences="*uid://4oisbo4wb65c"
 
 [display]
 
@@ -20,10 +25,15 @@ window/size/viewport_width=960
 window/size/viewport_height=540
 window/stretch/mode="viewport"
 
+[layer_names]
+
+2d_physics/layer_1="Word"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
