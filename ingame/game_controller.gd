@@ -5,9 +5,9 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	submit_button.pressed.connect(_submit_button_pressed)
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _submit_button_pressed():
+	var sentence = word_controller.get_made_sentence()
+	print(sentence)
+	print(LevelSentences.get_word_array_score(sentence, 1))

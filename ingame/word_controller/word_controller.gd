@@ -23,7 +23,7 @@ func create_words_from_level_sentence():
 	for word_string in word_array:
 		var word = word_scene.instantiate()
 		add_child(word)
-		words.append(word)
+		words.push_back(word)
 		word.text = word_string
 		# first check if punctuation
 		if word_string == "." or word_string == "!" or word_string == "?" or word_string == "…" or word_string == ",":
@@ -57,7 +57,7 @@ func set_up_word_positions():
 			# I think this is a little broken
 			move_all_in_row(current_row, words_row, Vector2(-word_size.x*0.5, 0))
 		w.position = Vector2(current_row_size*0.5 - word_size.x*0.5, current_row*word_size.y*0.5)
-		words_row.append(current_row)
+		words_row.push_back(current_row)
 # helper func for set_up_word_positions()
 func move_all_in_row(current_row : int, words_row : Array[int], move_amount : Vector2):
 	for i in words_row.size():
@@ -108,5 +108,5 @@ func makeIdArray() -> Array:
 	#if event.is_action_pressed("ui_up"):
 		#print(makeIdArray())
 
-func get_made_sententce():
+func get_made_sentence():
 	return makeIdArray()

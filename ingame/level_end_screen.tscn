@@ -1,0 +1,128 @@
+[gd_scene format=3 uid="uid://bhgnwyua3kc0c"]
+
+[ext_resource type="Script" uid="uid://k36kdbat05ly" path="res://ingame/level_end_screen.gd" id="1_tb6pa"]
+[ext_resource type="Texture2D" uid="uid://cbtoyj4ex6etq" path="res://assets/endscreentextures/youdid.png" id="2_ymx4j"]
+[ext_resource type="Texture2D" uid="uid://bol8g7q8bitc2" path="res://assets/endscreentextures/bad.png" id="3_xdkd7"]
+[ext_resource type="Texture2D" uid="uid://coyxa5mdgw4fc" path="res://assets/endscreentextures/okay.png" id="4_45f3u"]
+[ext_resource type="Texture2D" uid="uid://bdiyq222iccsq" path="res://assets/endscreentextures/good.png" id="5_wqu78"]
+
+[sub_resource type="Animation" id="Animation_yfjx7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BackgroundLines:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_r65bi"]
+resource_name = "RotateLines"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BackgroundLines:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.7853982]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q6iow"]
+_data = {
+&"RESET": SubResource("Animation_yfjx7"),
+&"RotateLines": SubResource("Animation_r65bi")
+}
+
+[node name="LevelEndScreen" type="Node2D" unique_id=2087576714]
+script = ExtResource("1_tb6pa")
+score = -1
+
+[node name="Background" type="Polygon2D" parent="." unique_id=691025245]
+polygon = PackedVector2Array(0, 0, 960, 0, 960, 540, 0, 540)
+
+[node name="BackgroundLines" type="Node2D" parent="." unique_id=31704102]
+modulate = Color(0.39, 0.39, 0.39, 1)
+position = Vector2(480, 270)
+
+[node name="Polygon2D" type="Polygon2D" parent="BackgroundLines" unique_id=1618776712]
+polygon = PackedVector2Array(-150, -800, 0, 0, 150, -800)
+
+[node name="Polygon2D2" type="Polygon2D" parent="BackgroundLines" unique_id=558192557]
+rotation = 1.5707964
+polygon = PackedVector2Array(-150, -800, 0, 0, 150, -800)
+
+[node name="Polygon2D3" type="Polygon2D" parent="BackgroundLines" unique_id=1660471162]
+rotation = 3.1415927
+polygon = PackedVector2Array(-150, -800, 0, 0, 150, -800)
+
+[node name="Polygon2D4" type="Polygon2D" parent="BackgroundLines" unique_id=530780011]
+rotation = 4.712389
+polygon = PackedVector2Array(-150, -800, 0, 0, 150, -800)
+
+[node name="Polygon2D5" type="Polygon2D" parent="BackgroundLines" unique_id=2070596997]
+rotation = 0.7853982
+polygon = PackedVector2Array(-150, -800, 0, 0, 150, -800)
+
+[node name="Polygon2D6" type="Polygon2D" parent="BackgroundLines" unique_id=1292221913]
+rotation = 2.3561945
+polygon = PackedVector2Array(-150, -800, 0, 0, 150, -800)
+
+[node name="Polygon2D7" type="Polygon2D" parent="BackgroundLines" unique_id=1828177683]
+rotation = 3.9269907
+polygon = PackedVector2Array(-150, -800, 0, 0, 150, -800)
+
+[node name="Polygon2D8" type="Polygon2D" parent="BackgroundLines" unique_id=1466159507]
+rotation = 5.497787
+polygon = PackedVector2Array(-150, -800, 0, 0, 150, -800)
+
+[node name="LinesRotate" type="AnimationPlayer" parent="." unique_id=711529763]
+libraries/ = SubResource("AnimationLibrary_q6iow")
+autoplay = &"RotateLines"
+
+[node name="Restart" type="Button" parent="." unique_id=544009689]
+offset_left = 26.0
+offset_top = 411.0
+offset_right = 254.0
+offset_bottom = 520.0
+text = "Try Again"
+
+[node name="Next" type="Button" parent="." unique_id=468174022]
+offset_left = 762.0
+offset_top = 436.0
+offset_right = 945.0
+offset_bottom = 524.0
+text = "Next Level"
+
+[node name="YouDid" type="Sprite2D" parent="." unique_id=295304691]
+position = Vector2(314, 86)
+scale = Vector2(2, 2)
+texture = ExtResource("2_ymx4j")
+
+[node name="Bad" type="Sprite2D" parent="." unique_id=751849369]
+visible = false
+modulate = Color(0.6378432, 0.6378432, 0.63784313, 1)
+position = Vector2(484, 277)
+scale = Vector2(2, 2)
+texture = ExtResource("3_xdkd7")
+
+[node name="Okay" type="Sprite2D" parent="." unique_id=693958149]
+visible = false
+position = Vector2(478, 274)
+scale = Vector2(2, 2)
+texture = ExtResource("4_45f3u")
+
+[node name="Good" type="Sprite2D" parent="." unique_id=2091481318]
+visible = false
+position = Vector2(461, 270)
+scale = Vector2(2, 2)
+texture = ExtResource("5_wqu78")
