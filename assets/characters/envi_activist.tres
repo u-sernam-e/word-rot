@@ -1,0 +1,25 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://b3avxi4vvg2my"]
+
+[ext_resource type="Texture2D" uid="uid://dhlmsq4c0wbqn" path="res://assets/characters/environmental_activist.png" id="1_if3wi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rsvns"]
+atlas = ExtResource("1_if3wi")
+region = Rect2(0, 0, 111, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2qcbb"]
+atlas = ExtResource("1_if3wi")
+region = Rect2(111, 0, 111, 180)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rsvns")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2qcbb")
+}],
+"loop": 1,
+"name": &"Talking",
+"speed": 5.0
+}]

@@ -1,0 +1,25 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://qpcbr1gwamsj"]
+
+[ext_resource type="Texture2D" uid="uid://dnlg5dtgmtlkh" path="res://assets/characters/lawyer.png" id="1_ch8wf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4cgjm"]
+atlas = ExtResource("1_ch8wf")
+region = Rect2(0, 0, 111, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3cves"]
+atlas = ExtResource("1_ch8wf")
+region = Rect2(111, 0, 111, 180)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4cgjm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3cves")
+}],
+"loop": 1,
+"name": &"Talking",
+"speed": 5.0
+}]

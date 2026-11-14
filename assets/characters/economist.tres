@@ -1,0 +1,25 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://iwpf8ukdtyru"]
+
+[ext_resource type="Texture2D" uid="uid://b7nt8uu43faon" path="res://assets/characters/economist.png" id="1_js6u8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_guw23"]
+atlas = ExtResource("1_js6u8")
+region = Rect2(0, 0, 111, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ln0w3"]
+atlas = ExtResource("1_js6u8")
+region = Rect2(111, 0, 111, 180)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_guw23")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ln0w3")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
