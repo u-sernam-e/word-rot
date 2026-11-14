@@ -5,6 +5,8 @@ signal button_pressed(StockImage)
 
 var moving : bool
 
+var on_timeline: bool = false # Indicates if this current area is on the timeline or not
+
 @onready var moveNode = $Move
 @onready var button = $Move/Button
 @onready var centerArea = $Move/CenterArea

@@ -23,6 +23,9 @@ texture = ExtResource("1_ujkqx")
 position = Vector2(467, 309.75)
 shape = SubResource("RectangleShape2D_1j3jd")
 
+[node name="TimelineMiddlePos" type="Marker2D" parent="Timeline" unique_id=1800543931]
+position = Vector2(467, 310)
+
 [node name="WordController" parent="." unique_id=149952642 instance=ExtResource("3_ruyyf")]
 
 [node name="StockImageController" parent="." unique_id=1795656987 instance=ExtResource("4_m1e4t")]

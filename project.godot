@@ -18,7 +18,6 @@ config/icon="res://icon.svg"
 [autoload]
 
 LevelSentences="*uid://4oisbo4wb65c"
-Audio="*uid://bcn0nc7vfbhwu"
 AudioManager="*uid://b4xwqq55icnrt"
 LevelTransition="*uid://8y6rqn8umipk"
 Globals="*uid://c7hetc0sddiwx"
