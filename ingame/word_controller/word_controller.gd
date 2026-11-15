@@ -98,6 +98,8 @@ func _word_button_pressed(word : Word):
 		is_moving_word = false
 	else:
 		if not is_moving_word:
+			if LevelTransition.level_count > 3:
+				TTS._speak(word.text)
 			word.toggle_move()
 			is_moving_word = true
 

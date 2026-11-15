@@ -25,6 +25,7 @@ LevelSentences="*uid://4oisbo4wb65c"
 AudioManager="*uid://b4xwqq55icnrt"
 LevelTransition="*uid://8y6rqn8umipk"
 Globals="*uid://c7hetc0sddiwx"
+TTS="*uid://m4xkolkbjm2m"
 
 [display]
 
