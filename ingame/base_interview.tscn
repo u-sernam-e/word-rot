@@ -1,35 +1,28 @@
 [gd_scene format=3 uid="uid://dvl3crwupnbj4"]
 
-[ext_resource type="Script" uid="uid://3o7f5gr6hio5" path="res://Game/main_menu.gd" id="1_od2yc"]
-[ext_resource type="Texture2D" uid="uid://csc62i5632b4h" path="res://assets/backgrounds/title_screen.png" id="2_4tnpp"]
-[ext_resource type="Texture2D" uid="uid://blhem152esylf" path="res://icon.svg" id="3_sv106"]
+[ext_resource type="Script" uid="uid://q7mw8tgawtxw" path="res://ingame/base_interview.gd" id="1_4tnpp"]
+[ext_resource type="Texture2D" uid="uid://d34iivdmsqxjt" path="res://assets/backgrounds/interview_bg.png" id="1_od2yc"]
+[ext_resource type="SpriteFrames" uid="uid://c8jad112rhilg" path="res://assets/characters/jen_eric.tres" id="3_4tnpp"]
+[ext_resource type="SpriteFrames" uid="uid://dqbhej0u1r34l" path="res://assets/characters/interviewer.tres" id="3_sv106"]
 
-[node name="MainMenu" type="CanvasLayer" unique_id=746575195]
-script = ExtResource("1_od2yc")
+[node name="base_interview" type="Node2D" unique_id=1915588365]
+script = ExtResource("1_4tnpp")
 
-[node name="Background" type="Sprite2D" parent="." unique_id=1640407993]
+[node name="InterviewBackground" type="Sprite2D" parent="." unique_id=1236728412]
 position = Vector2(480, 270)
 scale = Vector2(3, 3)
-texture = ExtResource("2_4tnpp")
+texture = ExtResource("1_od2yc")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=232002750]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 296.0
-offset_top = 65.0
-offset_right = 424.0
-offset_bottom = 215.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Interviewed" type="AnimatedSprite2D" parent="." unique_id=1237732925]
+position = Vector2(793.00006, 272)
+scale = Vector2(3, 3)
+sprite_frames = ExtResource("3_4tnpp")
+animation = &"Talking"
+frame = 1
+frame_progress = 0.8809035
 
-[node name="Label" type="Label" parent="VBoxContainer" unique_id=858444864]
-layout_mode = 2
-
-[node name="PlayGame" type="TextureButton" parent="VBoxContainer" unique_id=1866919362]
-layout_mode = 2
-texture_normal = ExtResource("3_sv106")
-
-[connection signal="pressed" from="VBoxContainer/PlayGame" to="." method="_on_play_game_pressed"]
+[node name="Interviewer" type="AnimatedSprite2D" parent="." unique_id=1809072079]
+position = Vector2(166, 273)
+scale = Vector2(3, 3)
+sprite_frames = ExtResource("3_sv106")
+frame_progress = 0.91117287
