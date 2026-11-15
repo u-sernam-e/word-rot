@@ -26,3 +26,52 @@ position = Vector2(166, 273)
 scale = Vector2(3, 3)
 sprite_frames = ExtResource("3_sv106")
 frame_progress = 0.91117287
+
+[node name="BlockInput" type="Control" parent="." unique_id=895666467]
+custom_minimum_size = Vector2(960, 540)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextContainer" type="Control" parent="." unique_id=369983958]
+custom_minimum_size = Vector2(960, 480)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Speech" type="RichTextLabel" parent="TextContainer" unique_id=1839265000]
+custom_minimum_size = Vector2(900, 0)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -450.0
+offset_top = -40.0
+offset_right = 450.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/normal_font = SubResource("FontVariation_4tnpp")
+theme_override_font_sizes/normal_font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_s2q7c")
+fit_content = true
+
+[node name="Continue" type="Button" parent="." unique_id=1743659827]
+offset_left = 730.0
+offset_top = 487.0
+offset_right = 943.0
+offset_bottom = 531.0
+theme_override_colors/font_disabled_color = Color(0.88, 0.88, 0.88, 0)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_6jk1m")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2kef7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wf03h")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_4tnpp")
+text = "Continue"
+
+[node name="SpeechPlayer" type="AudioStreamPlayer" parent="." unique_id=947607802]
+autoplay = true
+bus = &"GameMusic"
