@@ -2,7 +2,11 @@
 
 [sub_resource type="AudioEffectAmplify" id="AudioEffectAmplify_j3pel"]
 resource_name = "Amplify"
-volume_db = 9.0
+volume_db = 5.95
+
+[sub_resource type="AudioEffectAmplify" id="AudioEffectAmplify_g28q7"]
+resource_name = "Amplify"
+volume_db = 18.0
 
 [resource]
 bus/1/name = &"GameMusic"
@@ -11,7 +15,7 @@ bus/1/mute = false
 bus/1/bypass_fx = false
 bus/1/volume_db = -0.72599316
 bus/1/send = &"Master"
-bus/2/name = &"Speech"
+bus/2/name = &"Liam1"
 bus/2/solo = false
 bus/2/mute = false
 bus/2/bypass_fx = false
@@ -19,3 +23,29 @@ bus/2/volume_db = 6.0199986
 bus/2/send = &"Master"
 bus/2/effect/0/effect = SubResource("AudioEffectAmplify_j3pel")
 bus/2/effect/0/enabled = true
+bus/3/name = &"Liam2"
+bus/3/solo = false
+bus/3/mute = false
+bus/3/bypass_fx = false
+bus/3/volume_db = -1.1215086
+bus/3/send = &"Master"
+bus/4/name = &"Alex"
+bus/4/solo = false
+bus/4/mute = false
+bus/4/bypass_fx = false
+bus/4/volume_db = 5.026764
+bus/4/send = &"Master"
+bus/5/name = &"Kyle"
+bus/5/solo = false
+bus/5/mute = false
+bus/5/bypass_fx = false
+bus/5/volume_db = 6.0199986
+bus/5/send = &"Master"
+bus/5/effect/0/effect = SubResource("AudioEffectAmplify_g28q7")
+bus/5/effect/0/enabled = true
+bus/6/name = &"TTS"
+bus/6/solo = false
+bus/6/mute = false
+bus/6/bypass_fx = false
+bus/6/volume_db = 1.0604935
+bus/6/send = &"Master"

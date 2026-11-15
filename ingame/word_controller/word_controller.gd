@@ -55,6 +55,17 @@ func create_words_from_level_sentence():
 				 
 				word.set_word_sound(word_audio)
 				word_count += 1
+				
+				if level == 1 or level == 6:
+					word.set_bus("Liam1")
+				elif level == 2 or level == 7 or level == 11:
+					word.set_bus("Liam2")
+				elif level == 3 or level == 8:
+					word.set_bus("Alex")
+				elif level == 4 or level == 9:
+					word.set_bus("Kyle")
+				elif level == 5 or level == 10:
+					word.set_bus("TTS")
 
 # set up word positions in a centered manner
 # within the maximum width
