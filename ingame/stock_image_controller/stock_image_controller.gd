@@ -11,6 +11,8 @@ const image_scene = preload("res://ingame/stock_image_controller/image.tscn")
 
 var is_moving_image : bool = false
 
+var saved_image : CompressedTexture2D
+
 var stock_images : Array[CompressedTexture2D] = [
 	load("res://assets/stockimages/minimizedstockimages/absolute_cinema_min.png"),
 	load("res://assets/stockimages/minimizedstockimages/angry_guy_2_min.png"),
@@ -152,9 +154,16 @@ func handle_image_tween(on : bool, image : StockImage):
 	large_iamge.texture = large_stock_images[index]
 	
 	if on == true:
+		saved_image = large_stock_images[index]
+		
 		var tween2 = create_tween()
 		tween2.tween_property(large_iamge, "scale", Vector2(3.0, 3.0), 1.2).set_trans(Tween.TRANS_SINE)
 		await tween2.finished
+	else:
+		saved_image = null
+
+func get_current_image():
+	return saved_image
 
 func _process(_delta: float) -> void:
 	pass

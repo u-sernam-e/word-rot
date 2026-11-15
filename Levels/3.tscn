@@ -6,7 +6,7 @@
 
 [node name="3" unique_id=743927325 instance=ExtResource("1_nk742")]
 
-[node name="GameController" parent="." index="3" unique_id=120243097]
+[node name="GameController" parent="." index="2" unique_id=120243097]
 level = 3
 
 [node name="WordController" parent="GameController" index="0" unique_id=149952642]
@@ -29,6 +29,9 @@ position = Vector2(254, 191)
 
 [node name="WordDest6" parent="GameController/WordController" index="5" unique_id=1721700337 instance=ExtResource("2_c1gtk")]
 position = Vector2(359, 192)
+
+[node name="StockImageTab" parent="." index="3" unique_id=1738313370]
+visible = false
 
 [node name="LevelEndScreen" parent="." index="6" unique_id=2087576714]
 next_scene = ExtResource("2_h3ucp")

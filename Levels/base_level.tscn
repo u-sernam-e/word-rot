@@ -39,6 +39,14 @@ shape = SubResource("RectangleShape2D_1j3jd")
 [node name="TimelineMiddlePos" type="Marker2D" parent="Timeline" unique_id=1800543931]
 position = Vector2(600, 193)
 
+[node name="GameController" parent="." unique_id=120243097 node_paths=PackedStringArray("submit_button", "word_controller", "image_controller", "level_end_screen") instance=ExtResource("5_5y487")]
+submit_button = NodePath("../Submit")
+word_controller = NodePath("WordController")
+image_controller = NodePath("../StockImageTab/StockImageController")
+level_end_screen = NodePath("../LevelEndScreen")
+
+[node name="WordController" parent="GameController" unique_id=149952642 instance=ExtResource("3_ruyyf")]
+
 [node name="StockImageTab" parent="." unique_id=1738313370 instance=ExtResource("8_u1nwe")]
 position = Vector2(72, 104)
 
@@ -50,14 +58,6 @@ z_index = 10
 position = Vector2(357, -5)
 scale = Vector2(1e-05, 1e-05)
 texture = ExtResource("6_jg3su")
-
-[node name="GameController" parent="." unique_id=120243097 node_paths=PackedStringArray("submit_button", "word_controller", "image_controller", "level_end_screen") instance=ExtResource("5_5y487")]
-submit_button = NodePath("../Submit")
-word_controller = NodePath("WordController")
-image_controller = NodePath("../StockImageTab/StockImageController")
-level_end_screen = NodePath("../LevelEndScreen")
-
-[node name="WordController" parent="GameController" unique_id=149952642 instance=ExtResource("3_ruyyf")]
 
 [node name="Submit" type="Button" parent="." unique_id=1172260094]
 offset_left = 819.0

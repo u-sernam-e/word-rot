@@ -111,6 +111,31 @@ var word_dicts : Array = [
 	}
 ]
 
+var stock_dicts : Array = [
+	{0: 1, 4 : 1, 9 : 1, 8 : 1, 10 : -1, 5 : -1, 14 : -1, 1 : -1, 2 :-1},
+	{11 : 1, 10 : 1, 8 : 1, 14 : 1, 5 : -1, 1 : -1, 2: 1, 13 : 1},
+	{8 : 1, 10 : 1, 7 : 1, 3 : 1, 5 : 1, 12 : -1, 9 : -1, 11 : -1, },
+	{8 : 1, 9 : 1, 0 : 1, 2 : -1, 1 : -1, 10 : 1, 11 : -1, 12 : -1}
+]
+
+var convert_stock_to_int : Dictionary = {
+	load("res://assets/stockimages/absolute_cinema.png") : 0,
+	load("res://assets/stockimages/angry_guy_2.png") : 1,
+	load("res://assets/stockimages/angry_guy.png") : 2,
+	load("res://assets/stockimages/angry_woman.png") : 3,
+	load("res://assets/stockimages/chicken_with_glasses.png") : 4,
+	load("res://assets/stockimages/concerned_dude.png") : 5,
+	load("res://assets/stockimages/guy_on_banana_phone.png") : 6,
+	load("res://assets/stockimages/guy_on_phone.png") : 7,
+	load("res://assets/stockimages/happy_team.png") : 8,
+	load("res://assets/stockimages/lmk_dog.png") : 9,
+	load("res://assets/stockimages/nerd_guy.png") : 10,
+	load("res://assets/stockimages/phone_call_gesture_guy.png") : 11,
+	load("res://assets/stockimages/scared_dude.png") : 12,
+	load("res://assets/stockimages/thumbs_up_guy.png") : 13,
+	load("res://assets/stockimages/woman_on_call.png") : 14,
+}
+
 func get_word_array_score(word_array : Array, level : int) -> float:
 	if is_word_array_perfect_answer(word_array, level):
 		return 2
@@ -126,6 +151,20 @@ func get_word_array_score(word_array : Array, level : int) -> float:
 			score_total += level_dict[apo_fix_word]
 	var score_average = score_total/fixed_array.size()
 	return score_average
+
+func get_stock_image_score(image : CompressedTexture2D, level : int) -> float:
+	var score : float = 0.0
+	
+	if level >= 7 && level < 11:
+		var index = convert_stock_to_int[image]
+		var level_dict = stock_dicts[level]
+		
+		if level_dict.has(index):
+			score = float(level_dict[index])
+		else:
+			score = 0.0
+	
+	return score
 
 func get_word_no_apostrophe(word : String) -> String:
 	return word.remove_chars("'")
