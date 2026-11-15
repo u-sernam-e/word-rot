@@ -62,3 +62,6 @@ func set_word_sound(sound : AudioStream):
 
 func play_word_sound():
 	word_sound.play()
+
+func set_bus(bus : String):
+	word_sound.bus = bus

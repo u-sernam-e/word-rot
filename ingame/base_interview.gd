@@ -42,7 +42,7 @@ var level_data : Dictionary = {
 	
 	7 : {
 		"chara" : load("res://assets/characters/envi_activist.tres"),
-		"audio" : load("res://Audio/speech/1/full.wav"), # TESTING
+		"audio" : load("res://Audio/speech/7/full.wav"), # TESTING
 		},
 	
 	8 : {
@@ -62,7 +62,7 @@ var level_data : Dictionary = {
 	
 	11 : {
 		"chara" : load("res://assets/characters/jen_eric.tres"),
-		"audio" : load("res://Audio/speech/1/full.wav"), # TESTING
+		"audio" : load("res://Audio/speech/11/full.wav"), # TESTING
 		},
 }
 
@@ -75,6 +75,18 @@ func _ready():
 			speech_player.bus = "Master"
 		else:
 			speech_player.bus = "Speech"
+	
+	var lvl = LevelTransition.level_count
+	if lvl == 1 or lvl == 6:
+		speech_player.bus = "Liam1"
+	elif lvl == 2 or lvl == 7 or lvl == 11:
+		speech_player.bus = "Liam2"
+	elif lvl == 3 or lvl == 8:
+		speech_player.bus = "Alex"
+	elif lvl == 4 or lvl == 9:
+		speech_player.bus = "Kyle"
+	elif lvl == 5 or lvl == 10:
+		speech_player.bus = "TTS"
 	
 	continue_butt.disabled = true
 	
