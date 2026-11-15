@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://56r4dylhgi72"]
 
 [ext_resource type="Script" uid="uid://3o7f5gr6hio5" path="res://Game/main_menu.gd" id="1_yltbk"]
-[ext_resource type="Texture2D" uid="uid://blhem152esylf" path="res://icon.svg" id="2_gl5pw"]
 [ext_resource type="Texture2D" uid="uid://csc62i5632b4h" path="res://assets/backgrounds/title_screen.png" id="2_nu65f"]
+[ext_resource type="Texture2D" uid="uid://cdwhqmd24xid6" path="res://assets/stockimages/lmk_dog.png" id="3_nu65f"]
 
 [node name="MainMenu" type="CanvasLayer" unique_id=746575195]
 script = ExtResource("1_yltbk")
@@ -27,9 +27,10 @@ grow_vertical = 2
 
 [node name="Label" type="Label" parent="VBoxContainer" unique_id=858444864]
 layout_mode = 2
+text = "    P    L    A    Y"
 
 [node name="PlayGame" type="TextureButton" parent="VBoxContainer" unique_id=1866919362]
 layout_mode = 2
-texture_normal = ExtResource("2_gl5pw")
+texture_normal = ExtResource("3_nu65f")
 
 [connection signal="pressed" from="VBoxContainer/PlayGame" to="." method="_on_play_game_pressed"]

@@ -11,6 +11,7 @@ extends Node2D
 @export var word_insertion_position: int = -1 # Will insert right after this word (4 would mean insert right after word 4). Starts at 1.
 
 @onready var stock_image_controller: ImageController = $"../StockImageTab/StockImageController"
+@onready var large_iamge = $"../StockImageTab/StockImageController/LargeIamge"
 
 @export var level : int
 
@@ -63,20 +64,24 @@ func _submit_button_pressed():
 	var sentence = word_controller.get_made_sentence()
 	var image = stock_image_controller.get_current_image()
 	
+	Globals.level_start = false
+	
 	var words: PackedStringArray = []
-	if LevelTransition.level_count == 5 or LevelTransition.level_count == 10:
+	if LevelTransition.level_count == 5 or LevelTransition.level_count == 10 or LevelTransition.level_count == 3 or LevelTransition.level_count == 7 or LevelTransition.level_count == 8 or LevelTransition.level_count == 10 or LevelTransition.level_count == 11:
 		for word in sentence:
 			if word != null:
 				words.append(str(word))
 		if not Globals.cur_word_insertion == "empty" and not Globals.cur_word_insertion_idx == -1:
 			words.insert(Globals.cur_word_insertion_idx, Globals.cur_word_insertion)
-		TTS._speak(" ".join(words))
+		TTS._speak(" ".join(words), TTS.SENTENCE_ID)
+		await TTS.finished_playing_tts
+	else:
+		word_controller.play_sentence()
+		await word_controller.finished_playing_sentence
 	var score = LevelSentences.get_word_array_score(sentence, level)
 	score += LevelSentences.get_stock_image_score(image, level)
 	
-	word_controller.play_sentence()
-	await word_controller.finished_playing_sentence
-	
+	large_iamge.visible = false
 	level_end_screen.set_score_and_show(score)
 	
 	print(sentence)

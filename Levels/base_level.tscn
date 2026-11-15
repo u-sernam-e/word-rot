@@ -46,6 +46,10 @@ test_button = NodePath("../Test")
 word_controller = NodePath("WordController")
 image_controller = NodePath("../StockImageTab/StockImageController")
 level_end_screen = NodePath("../LevelEndScreen")
+word_restriction = null
+word_insertion = null
+word_insertion_position = null
+level = null
 
 [node name="WordController" parent="GameController" unique_id=149952642 instance=ExtResource("3_ruyyf")]
 
@@ -114,7 +118,7 @@ grow_horizontal = 2
 [node name="Restrictions" type="Label" parent="CanvasLayer/VBoxContainer2" unique_id=2090430844]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 10
 text = "gggggg"
 horizontal_alignment = 1
 

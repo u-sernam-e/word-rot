@@ -5,6 +5,7 @@ extends Node2D
 
 func _ready() -> void:
 	Globals.level_start = false
+	Globals.image_on_timeline = false
 	prompt.text = LevelSentences.prompts[LevelTransition.level_count]
 	restrictions.text = LevelSentences.restrictions[LevelTransition.level_count]
 	

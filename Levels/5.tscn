@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dca6kim0gohpu" path="res://Levels/base_level.tscn" id="1_j2clv"]
 [ext_resource type="PackedScene" uid="uid://c0j8u4dgkkwo7" path="res://ingame/word_controller/word_dest.tscn" id="2_l5fxt"]
+[ext_resource type="PackedScene" uid="uid://byaxbqxt30mic" path="res://Levels/6.tscn" id="3_lgk5l"]
 
 [node name="5" unique_id=743927325 instance=ExtResource("1_j2clv")]
 
@@ -11,7 +12,7 @@ word_insertion_position = 3
 level = 5
 
 [node name="WordController" parent="GameController" index="0" unique_id=149952642]
-position = Vector2(244, 160)
+position = Vector2(286, 160)
 
 [node name="WordDest" parent="GameController/WordController" index="0" unique_id=1209687987 instance=ExtResource("2_l5fxt")]
 position = Vector2(-97, 182)
@@ -36,3 +37,9 @@ position = Vector2(180, 242)
 
 [node name="WordDest8" parent="GameController/WordController" index="7" unique_id=1096806943 instance=ExtResource("2_l5fxt")]
 position = Vector2(324, 243)
+
+[node name="StockImageTab" parent="." index="3" unique_id=1738313370]
+visible = false
+
+[node name="LevelEndScreen" parent="." index="6" unique_id=2087576714]
+next_scene = ExtResource("3_lgk5l")

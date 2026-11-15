@@ -1,5 +1,54 @@
 [gd_scene format=3 uid="uid://ngioxb8lex1u"]
 
 [ext_resource type="PackedScene" uid="uid://dca6kim0gohpu" path="res://Levels/base_level.tscn" id="1_olads"]
+[ext_resource type="PackedScene" uid="uid://c0j8u4dgkkwo7" path="res://ingame/word_controller/word_dest.tscn" id="2_n6pm3"]
+[ext_resource type="PackedScene" uid="uid://2rv663wi4juv" path="res://Levels/9.tscn" id="2_roum6"]
 
 [node name="8" unique_id=743927325 instance=ExtResource("1_olads")]
+
+[node name="GameController" parent="." index="2" unique_id=120243097]
+word_insertion = "promising"
+word_insertion_position = 6
+level = 8
+
+[node name="WordController" parent="GameController" index="0" unique_id=149952642]
+position = Vector2(312, 177)
+
+[node name="WordDest" parent="GameController/WordController" index="0" unique_id=1209687987 instance=ExtResource("2_n6pm3")]
+position = Vector2(-168, 167)
+
+[node name="WordDest2" parent="GameController/WordController" index="1" unique_id=1585168076 instance=ExtResource("2_n6pm3")]
+position = Vector2(-64, 167)
+
+[node name="WordDest3" parent="GameController/WordController" index="2" unique_id=1236052025 instance=ExtResource("2_n6pm3")]
+position = Vector2(40, 167)
+
+[node name="WordDest4" parent="GameController/WordController" index="3" unique_id=2067840334 instance=ExtResource("2_n6pm3")]
+position = Vector2(144, 167)
+
+[node name="WordDest5" parent="GameController/WordController" index="4" unique_id=256355652 instance=ExtResource("2_n6pm3")]
+position = Vector2(248, 167)
+
+[node name="WordDest6" parent="GameController/WordController" index="5" unique_id=172659716 instance=ExtResource("2_n6pm3")]
+position = Vector2(352, 167)
+
+[node name="WordDest7" parent="GameController/WordController" index="6" unique_id=1131524431 instance=ExtResource("2_n6pm3")]
+position = Vector2(-168, 223)
+
+[node name="WordDest8" parent="GameController/WordController" index="7" unique_id=282145203 instance=ExtResource("2_n6pm3")]
+position = Vector2(-64, 224)
+
+[node name="WordDest9" parent="GameController/WordController" index="8" unique_id=1461424161 instance=ExtResource("2_n6pm3")]
+position = Vector2(40, 225)
+
+[node name="WordDest10" parent="GameController/WordController" index="9" unique_id=1757109402 instance=ExtResource("2_n6pm3")]
+position = Vector2(144, 225)
+
+[node name="WordDest11" parent="GameController/WordController" index="10" unique_id=2115152227 instance=ExtResource("2_n6pm3")]
+position = Vector2(248, 225)
+
+[node name="WordDest12" parent="GameController/WordController" index="11" unique_id=1619126959 instance=ExtResource("2_n6pm3")]
+position = Vector2(352, 226)
+
+[node name="LevelEndScreen" parent="." index="6" unique_id=2087576714]
+next_scene = ExtResource("2_roum6")

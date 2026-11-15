@@ -10,25 +10,25 @@
 level = 1
 
 [node name="WordController" parent="GameController" index="0" unique_id=149952642]
-position = Vector2(299, 125)
+position = Vector2(277, 170)
 
 [node name="WordDest" parent="GameController/WordController" index="0" unique_id=1209687987 instance=ExtResource("2_y0prk")]
-position = Vector2(-147, 245)
+position = Vector2(-130, 185)
 
 [node name="WordDest2" parent="GameController/WordController" index="1" unique_id=680958723 instance=ExtResource("2_y0prk")]
-position = Vector2(-45, 246)
+position = Vector2(-23, 186)
 
 [node name="WordDest3" parent="GameController/WordController" index="2" unique_id=1531622047 instance=ExtResource("2_y0prk")]
-position = Vector2(59, 243)
+position = Vector2(83, 187)
 
 [node name="WordDest4" parent="GameController/WordController" index="3" unique_id=66281063 instance=ExtResource("2_y0prk")]
-position = Vector2(161, 244)
+position = Vector2(187, 187)
 
 [node name="WordDest5" parent="GameController/WordController" index="4" unique_id=1663313748 instance=ExtResource("2_y0prk")]
-position = Vector2(265, 245)
+position = Vector2(291, 187)
 
 [node name="WordDest6" parent="GameController/WordController" index="5" unique_id=1142923891 instance=ExtResource("2_y0prk")]
-position = Vector2(369, 248)
+position = Vector2(395, 187)
 
 [node name="StockImageTab" parent="." index="3" unique_id=1738313370]
 visible = false

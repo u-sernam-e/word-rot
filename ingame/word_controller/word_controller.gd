@@ -41,7 +41,7 @@ func create_words_from_level_sentence():
 			word.is_punctuation = true
 			word.disable_button()
 		else:
-			if level < 3:
+			if not level == 5 and not level == 10 and not level == 3 and not level == 7 and not level == 8 and not level == 11:
 				var bonus_zero = ""
 				if word_count < 10:
 					bonus_zero = "0"
@@ -55,16 +55,17 @@ func set_up_word_positions():
 	var current_row : int = 0
 	var current_row_size : int = 0
 	var words_row : Array[int] = [] # each value in this array corresponds to a value in words[] array
+	var size_y = words[0].get_button_size().y
 	for w in words:
 		var word_size = w.get_button_size()
 		# if row would become too big, create new row
 		# need to move all current rows up
 		if current_row_size + word_size.x > MAX_WIDTH:
 			current_row += 1
-			current_row_size = 0
+			current_row_size = word_size.x
 			for row in range(current_row):
 				#print(row)
-				move_all_in_row(row, words_row, Vector2(0, -word_size.y*0.5))
+				move_all_in_row(row, words_row, Vector2(0, -size_y*0.5))
 			
 			#print("row move up")
 			#print(current_row)
@@ -75,7 +76,7 @@ func set_up_word_positions():
 			# add the required length to all words in current row
 			# I think this is a little broken
 			move_all_in_row(current_row, words_row, Vector2(-word_size.x*0.5, 0))
-		w.position = Vector2(current_row_size*0.5 - word_size.x*0.5, current_row*word_size.y*0.5)
+		w.position = Vector2(current_row_size*0.5 - word_size.x*0.5, current_row*size_y*0.5)
 		words_row.push_back(current_row)
 # helper func for set_up_word_positions()
 func move_all_in_row(current_row : int, words_row : Array[int], move_amount : Vector2):
@@ -99,7 +100,7 @@ func _word_button_pressed(word : Word):
 		is_moving_word = false
 	else:
 		if not is_moving_word:
-			if LevelTransition.level_count == 5 or LevelTransition.level_count == 10:
+			if LevelTransition.level_count == 5 or LevelTransition.level_count == 10 or LevelTransition.level_count == 3 or LevelTransition.level_count == 7 or LevelTransition.level_count == 8 or LevelTransition.level_count == 10 or LevelTransition.level_count == 11:
 				TTS._speak(word.text)
 			word.toggle_move()
 			is_moving_word = true
@@ -145,7 +146,7 @@ func play_sentence():
 				await c.get_overlapping_word().sound_finished
 				if check_insertions and cur_word == Globals.cur_word_insertion_idx:
 					TTS._speak(Globals.cur_word_insertion)
-					await get_tree().create_timer(0.2).timeout
+					#await get_tree().create_timer(0.2).timeout
 				cur_word += 1
 	currently_playing_sentence = false
 	finished_playing_sentence.emit()

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="WordRot"
-run/main_scene="uid://c00qo6mhwb5ah"
+run/main_scene="uid://56r4dylhgi72"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 

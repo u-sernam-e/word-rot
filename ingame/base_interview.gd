@@ -23,7 +23,7 @@ var level_data : Dictionary = {
 	
 	3 : {
 		"chara" : load("res://assets/characters/economist.tres"),
-		"audio" : "place recording here",
+		"audio" : load("res://Audio/speech/1/full.wav"), # TESTING
 		},
 	
 	4 : {
@@ -33,7 +33,7 @@ var level_data : Dictionary = {
 	
 	5 : {
 		"chara" : load("res://assets/characters/ex_employee.tres"),
-		"audio" : load("res://Audio/speech/4/full.wav"), # TESTING
+		"audio" : load("res://Audio/speech/5/full.wav"),
 		},
 	6 : {
 		"chara" : load("res://assets/characters/jen_eric.tres"),
@@ -42,12 +42,12 @@ var level_data : Dictionary = {
 	
 	7 : {
 		"chara" : load("res://assets/characters/envi_activist.tres"),
-		"audio" : "place recording here",
+		"audio" : load("res://Audio/speech/1/full.wav"), # TESTING
 		},
 	
 	8 : {
 		"chara" : load("res://assets/characters/economist.tres"),
-		"audio" : "place recording here",
+		"audio" : load("res://Audio/speech/1/full.wav"), # TESTING
 		},
 	
 	9 : {
@@ -57,12 +57,12 @@ var level_data : Dictionary = {
 	
 	10 : {
 		"chara" : load("res://assets/characters/ex_employee.tres"),
-		"audio" : "place recording here",
+		"audio" : load("res://Audio/speech/10/full.wav"),
 		},
 	
 	11 : {
 		"chara" : load("res://assets/characters/jen_eric.tres"),
-		"audio" : "place recording here",
+		"audio" : load("res://Audio/speech/1/full.wav"), # TESTING
 		},
 }
 
@@ -71,6 +71,10 @@ func _ready():
 	
 	if !level_data[LevelTransition.level_count]["audio"] is String:
 		speech_player.stream = level_data[LevelTransition.level_count]["audio"]
+		if LevelTransition.level_count == 5 or LevelTransition.level_count == 10:
+			speech_player.bus = "Master"
+		else:
+			speech_player.bus = "Speech"
 	
 	continue_butt.disabled = true
 	

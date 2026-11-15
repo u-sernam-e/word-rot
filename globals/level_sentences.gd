@@ -23,12 +23,12 @@ the defendant to prove that the company had committed \
 the serious crime of embezzling funds . The company was \
 not able to convince the jury that this wrong doing was \
 done without the knowledge of the CEO . This wrong doing \
-is not going to go without a needed punishment that the \
+is not going to go with out a needed punishment that the \
 jury has decided upon .",
 
 	"When I was working here I remember that my colleagues \
 and I were able to gain wide access to the personal \
-data of the many American users from our service. \
+data of the many American users from our service . \
 Members are unaware of the privacy agreement .",
 
 	"Please, no more ads! I really wish the company didn’t \
@@ -70,7 +70,7 @@ I’ve done as an employee at this company is killing me . \
 It will never be the same knowing how much damage my work \
 caused . I wasn’t able to get a job before I worked at this \
 company because all my life I’ve always been a jack of all \
-trades, master of none , so when I got the offer to make a \
+trades , master of none , so when I got the offer to make a \
 name for myself I took it , but I regret my decision and \
 so do many other former employees .",
 	
@@ -307,10 +307,18 @@ var word_dicts : Array = [
 ]
 
 var stock_dicts : Array = [
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
 	{0: 1, 4 : 1, 9 : 1, 8 : 1, 10 : -1, 5 : -1, 14 : -1, 1 : -1, 2 :-1},
 	{11 : 1, 10 : 1, 8 : 1, 14 : 1, 5 : -1, 1 : -1, 2: 1, 13 : 1},
 	{8 : 1, 10 : 1, 7 : 1, 3 : 1, 5 : 1, 12 : -1, 9 : -1, 11 : -1, },
-	{8 : 1, 9 : 1, 0 : 1, 2 : -1, 1 : -1, 10 : 1, 11 : -1, 12 : -1}
+	{8 : 1, 9 : 1, 0 : 1, 2 : -1, 1 : -1, 10 : 1, 11 : -1, 12 : -1},
+	{}
 ]
 
 var convert_stock_to_int : Dictionary = {

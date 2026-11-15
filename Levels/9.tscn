@@ -1,5 +1,48 @@
 [gd_scene format=3 uid="uid://2rv663wi4juv"]
 
 [ext_resource type="PackedScene" uid="uid://dca6kim0gohpu" path="res://Levels/base_level.tscn" id="1_82drj"]
+[ext_resource type="PackedScene" uid="uid://c0j8u4dgkkwo7" path="res://ingame/word_controller/word_dest.tscn" id="2_aimdy"]
+[ext_resource type="PackedScene" uid="uid://dkntxitv1e2ec" path="res://Levels/10.tscn" id="2_ofa00"]
 
 [node name="9" unique_id=743927325 instance=ExtResource("1_82drj")]
+
+[node name="GameController" parent="." index="2" unique_id=120243097]
+word_insertion = "merit"
+word_insertion_position = 4
+level = 9
+
+[node name="WordController" parent="GameController" index="0" unique_id=149952642]
+position = Vector2(308, 189)
+
+[node name="WordDest" parent="GameController/WordController" index="0" unique_id=1209687987 instance=ExtResource("2_aimdy")]
+position = Vector2(-148, 156)
+
+[node name="WordDest2" parent="GameController/WordController" index="1" unique_id=1559808071 instance=ExtResource("2_aimdy")]
+position = Vector2(-20, 156)
+
+[node name="WordDest3" parent="GameController/WordController" index="2" unique_id=16290031 instance=ExtResource("2_aimdy")]
+position = Vector2(108, 157)
+
+[node name="WordDest4" parent="GameController/WordController" index="3" unique_id=537642559 instance=ExtResource("2_aimdy")]
+position = Vector2(236, 157)
+
+[node name="WordDest5" parent="GameController/WordController" index="4" unique_id=1888722889 instance=ExtResource("2_aimdy")]
+position = Vector2(364, 157)
+
+[node name="WordDest6" parent="GameController/WordController" index="5" unique_id=1980239054 instance=ExtResource("2_aimdy")]
+position = Vector2(-148, 219)
+
+[node name="WordDest7" parent="GameController/WordController" index="6" unique_id=77361449 instance=ExtResource("2_aimdy")]
+position = Vector2(-20, 219)
+
+[node name="WordDest8" parent="GameController/WordController" index="7" unique_id=72002320 instance=ExtResource("2_aimdy")]
+position = Vector2(108, 219)
+
+[node name="WordDest9" parent="GameController/WordController" index="8" unique_id=1972339663 instance=ExtResource("2_aimdy")]
+position = Vector2(236, 219)
+
+[node name="WordDest10" parent="GameController/WordController" index="9" unique_id=1015690876 instance=ExtResource("2_aimdy")]
+position = Vector2(364, 219)
+
+[node name="LevelEndScreen" parent="." index="6" unique_id=2087576714]
+next_scene = ExtResource("2_ofa00")

@@ -20,6 +20,6 @@ animations = [{
 "texture": SubResource("AtlasTexture_2d1np")
 }],
 "loop": 1,
-"name": &"default",
+"name": &"Talking",
 "speed": 5.0
 }]
