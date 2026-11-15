@@ -8,12 +8,19 @@ var moving : bool
 var on_timeline: bool = false # Indicates if this current area is on the timeline or not
 
 @onready var moveNode = $Move
-@onready var button = $Move/Button
 @onready var centerArea = $Move/CenterArea
+
+var button 
+
+var image: Sprite2D
 
 func _ready() -> void:
 	button.pressed.connect(_button_pressed)
 	get_tree().create_timer(0).timeout.connect(_delayed_setup)
+
+func initial_set_up(texture : CompressedTexture2D):
+	button = $Move/Button
+	button.texture_normal = texture
 
 func _delayed_setup():
 	get_tree().create_timer(0).timeout.connect(_double_delayed_setup)

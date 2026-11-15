@@ -64,7 +64,8 @@ animations = [{
 script = ExtResource("1_44hd6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1765614140]
-position = Vector2(50, 31)
+position = Vector2(150, 92)
+scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_rxdmo")
 
 [node name="OpenButton" type="Button" parent="AnimatedSprite2D" unique_id=118007238]

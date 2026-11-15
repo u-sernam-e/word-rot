@@ -6,10 +6,12 @@
 [ext_resource type="PackedScene" uid="uid://s33077wypp3v" path="res://ingame/word_controller/word_controller.tscn" id="3_ruyyf"]
 [ext_resource type="PackedScene" uid="uid://c4muhs1j44mq4" path="res://ingame/stock_image_controller/StockImageController.tscn" id="4_m1e4t"]
 [ext_resource type="PackedScene" uid="uid://c1vniq3fqcrwe" path="res://ingame/game_controller.tscn" id="5_5y487"]
+[ext_resource type="Texture2D" uid="uid://c410yaoeffmyy" path="res://assets/stockimages/absolute_cinema.png" id="6_jg3su"]
 [ext_resource type="PackedScene" uid="uid://bhgnwyua3kc0c" path="res://ingame/level_end_screen.tscn" id="7_u1nwe"]
+[ext_resource type="PackedScene" uid="uid://du3wpkodr17by" path="res://ingame/stock_image_tab.tscn" id="8_u1nwe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1j3jd"]
-size = Vector2(626, 106)
+size = Vector2(282, 165)
 
 [node name="BaseLevel" type="Node2D" unique_id=743927325]
 script = ExtResource("1_3vydx")
@@ -31,18 +33,28 @@ scale = Vector2(7.15625, 1)
 texture = ExtResource("1_ujkqx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Timeline" unique_id=1518796861]
-position = Vector2(409, 367)
+position = Vector2(600, 192.5)
 shape = SubResource("RectangleShape2D_1j3jd")
 
 [node name="TimelineMiddlePos" type="Marker2D" parent="Timeline" unique_id=1800543931]
-position = Vector2(467, 310)
+position = Vector2(600, 193)
 
-[node name="StockImageController" parent="." unique_id=1795656987 instance=ExtResource("4_m1e4t")]
+[node name="StockImageTab" parent="." unique_id=1738313370 instance=ExtResource("8_u1nwe")]
+position = Vector2(72, 104)
+
+[node name="StockImageController" parent="StockImageTab" unique_id=1795656987 instance=ExtResource("4_m1e4t")]
+position = Vector2(171, 93)
+
+[node name="LargeIamge" type="Sprite2D" parent="StockImageTab/StockImageController" unique_id=1669737041]
+z_index = 10
+position = Vector2(357, -5)
+scale = Vector2(1e-05, 1e-05)
+texture = ExtResource("6_jg3su")
 
 [node name="GameController" parent="." unique_id=120243097 node_paths=PackedStringArray("submit_button", "word_controller", "image_controller", "level_end_screen") instance=ExtResource("5_5y487")]
 submit_button = NodePath("../Submit")
 word_controller = NodePath("WordController")
-image_controller = NodePath("../StockImageController")
+image_controller = NodePath("../StockImageTab/StockImageController")
 level_end_screen = NodePath("../LevelEndScreen")
 
 [node name="WordController" parent="GameController" unique_id=149952642 instance=ExtResource("3_ruyyf")]
