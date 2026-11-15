@@ -58,6 +58,7 @@ frame_progress = 0.8809035
 position = Vector2(166, 273)
 scale = Vector2(3, 3)
 sprite_frames = ExtResource("3_sv106")
+animation = &"Talking"
 frame_progress = 0.91117287
 
 [node name="BlockInput" type="Control" parent="." unique_id=895666467]

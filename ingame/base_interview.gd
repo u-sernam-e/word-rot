@@ -23,7 +23,7 @@ var level_data : Dictionary = {
 	
 	3 : {
 		"chara" : load("res://assets/characters/economist.tres"),
-		"audio" : load("res://Audio/speech/1/full.wav"), # TESTING
+		"audio" : load("res://Audio/speech/3/full.wav"), # TESTING
 		},
 	
 	4 : {
@@ -47,7 +47,7 @@ var level_data : Dictionary = {
 	
 	8 : {
 		"chara" : load("res://assets/characters/economist.tres"),
-		"audio" : load("res://Audio/speech/1/full.wav"), # TESTING
+		"audio" : load("res://Audio/speech/8/full.wav"), # TESTING
 		},
 	
 	9 : {

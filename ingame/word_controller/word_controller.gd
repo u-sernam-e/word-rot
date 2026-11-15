@@ -41,11 +41,18 @@ func create_words_from_level_sentence():
 			word.is_punctuation = true
 			word.disable_button()
 		else:
-			if not level == 5 and not level == 10 and not level == 3 and not level == 7 and not level == 8 and not level == 11:
+			if not level == 5 and not level == 10:
 				var bonus_zero = ""
 				if word_count < 10:
 					bonus_zero = "0"
-				var word_audio = load("res://Audio/speech/" + str(level) + "/-" + bonus_zero + str(word_count) + ".wav")
+				
+				var word_audio
+				
+				if level == 3 || level == 8:
+					word_audio = load("res://Audio/speech/" + str(level) + "/" + bonus_zero + str(word_count) + ".untitled.wav")
+				else:
+					word_audio = load("res://Audio/speech/" + str(level) + "/-" + bonus_zero + str(word_count) + ".wav")
+				 
 				word.set_word_sound(word_audio)
 				word_count += 1
 
@@ -100,7 +107,7 @@ func _word_button_pressed(word : Word):
 		is_moving_word = false
 	else:
 		if not is_moving_word:
-			if LevelTransition.level_count == 5 or LevelTransition.level_count == 10 or LevelTransition.level_count == 3 or LevelTransition.level_count == 7 or LevelTransition.level_count == 8 or LevelTransition.level_count == 10 or LevelTransition.level_count == 11:
+			if LevelTransition.level_count == 5 or LevelTransition.level_count == 10:
 				TTS._speak(word.text)
 			word.toggle_move()
 			is_moving_word = true

@@ -67,7 +67,7 @@ func _submit_button_pressed():
 	Globals.level_start = false
 	
 	var words: PackedStringArray = []
-	if LevelTransition.level_count == 5 or LevelTransition.level_count == 10 or LevelTransition.level_count == 3 or LevelTransition.level_count == 7 or LevelTransition.level_count == 8 or LevelTransition.level_count == 10 or LevelTransition.level_count == 11:
+	if LevelTransition.level_count == 5 or LevelTransition.level_count == 10:
 		for word in sentence:
 			if word != null:
 				words.append(str(word))

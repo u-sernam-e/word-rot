@@ -46,10 +46,6 @@ test_button = NodePath("../Test")
 word_controller = NodePath("WordController")
 image_controller = NodePath("../StockImageTab/StockImageController")
 level_end_screen = NodePath("../LevelEndScreen")
-word_restriction = null
-word_insertion = null
-word_insertion_position = null
-level = null
 
 [node name="WordController" parent="GameController" unique_id=149952642 instance=ExtResource("3_ruyyf")]
 

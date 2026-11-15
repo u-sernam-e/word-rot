@@ -47,7 +47,7 @@ me too sick . I can’t stand it !",
 
 	"It is seeming that the corporations investments all \
 go in a circular motion where they funnel money \
-between each other to be able to help boost up their \
+between each other to be able to boost up their \
 valuation on the stock market . We also see that some of \
 the business investments are to companies with board \
 members that are family of the CEO and are able to help \
