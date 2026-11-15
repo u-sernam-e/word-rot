@@ -1,46 +1,35 @@
 [gd_scene format=3 uid="uid://c00qo6mhwb5ah"]
 
-[ext_resource type="PackedScene" uid="uid://s33077wypp3v" path="res://ingame/word_controller/word_controller.tscn" id="1_6uqi0"]
-[ext_resource type="PackedScene" uid="uid://c1vniq3fqcrwe" path="res://ingame/game_controller.tscn" id="1_ppyta"]
-[ext_resource type="PackedScene" uid="uid://c0j8u4dgkkwo7" path="res://ingame/word_controller/word_dest.tscn" id="3_ppyta"]
-[ext_resource type="PackedScene" uid="uid://bhgnwyua3kc0c" path="res://ingame/level_end_screen.tscn" id="4_ppyta"]
+[ext_resource type="Script" uid="uid://3o7f5gr6hio5" path="res://Game/main_menu.gd" id="1_6uqi0"]
+[ext_resource type="Texture2D" uid="uid://csc62i5632b4h" path="res://assets/backgrounds/title_screen.png" id="2_ppyta"]
+[ext_resource type="Texture2D" uid="uid://blhem152esylf" path="res://icon.svg" id="3_ykrsh"]
 
-[node name="Test" type="Node2D" unique_id=172724480]
+[node name="MainMenu" type="CanvasLayer" unique_id=746575195]
+script = ExtResource("1_6uqi0")
 
-[node name="GameController" parent="." unique_id=120243097 node_paths=PackedStringArray("submit_button", "word_controller", "level_end_screen") instance=ExtResource("1_ppyta")]
-submit_button = NodePath("Button2")
-word_controller = NodePath("WordController")
-level_end_screen = NodePath("../LevelEndScreen")
-level = 2
+[node name="Background" type="Sprite2D" parent="." unique_id=1640407993]
+position = Vector2(480, 270)
+scale = Vector2(3, 3)
+texture = ExtResource("2_ppyta")
 
-[node name="WordController" parent="GameController" unique_id=149952642 instance=ExtResource("1_6uqi0")]
-position = Vector2(389, 229)
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=232002750]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 296.0
+offset_top = 65.0
+offset_right = 424.0
+offset_bottom = 215.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="WordDest" parent="GameController/WordController" unique_id=1209687987 instance=ExtResource("3_ppyta")]
-position = Vector2(-79, 262)
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=858444864]
+layout_mode = 2
 
-[node name="WordDest2" parent="GameController/WordController" unique_id=1647175048 instance=ExtResource("3_ppyta")]
-position = Vector2(-13, 260)
-pos = 1
+[node name="PlayGame" type="TextureButton" parent="VBoxContainer" unique_id=1866919362]
+layout_mode = 2
+texture_normal = ExtResource("3_ykrsh")
 
-[node name="WordDest3" parent="GameController/WordController" unique_id=1553050183 instance=ExtResource("3_ppyta")]
-position = Vector2(117, 248)
-pos = 2
-
-[node name="WordDest4" parent="GameController/WordController" unique_id=1841236255 instance=ExtResource("3_ppyta")]
-position = Vector2(190, 244)
-pos = 3
-
-[node name="WordDest5" parent="GameController/WordController" unique_id=300163562 instance=ExtResource("3_ppyta")]
-position = Vector2(257, 243)
-pos = 4
-
-[node name="Button2" type="Button" parent="GameController" unique_id=166189815]
-offset_left = 873.0
-offset_top = 487.0
-offset_right = 936.0
-offset_bottom = 518.0
-text = "Submit"
-
-[node name="LevelEndScreen" parent="." unique_id=2087576714 instance=ExtResource("4_ppyta")]
-visible = false
+[connection signal="pressed" from="VBoxContainer/PlayGame" to="." method="_on_play_game_pressed"]
