@@ -19,3 +19,6 @@ theme_override_font_sizes/font_size = 10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Move/CenterArea" unique_id=744481273]
 shape = SubResource("RectangleShape2D_s2q7c")
+
+[node name="WordSound" type="AudioStreamPlayer" parent="." unique_id=292948810]
+bus = &"Speech"

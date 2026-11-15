@@ -56,6 +56,9 @@ func set_score_and_show(score):
 		good.show()
 	
 	show()
+	
+	modulate.a = 0
+	create_tween().tween_property(self, "modulate", Color(1, 1, 1, 1), 0.5)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:

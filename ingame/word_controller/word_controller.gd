@@ -1,6 +1,9 @@
 extends Node2D
 class_name WordController
 
+signal finished_playing_sentence
+var currently_playing_sentence = false
+
 var level : int
 @export var center : Vector2
 const MAX_WIDTH : int = 300
@@ -27,6 +30,7 @@ func _ready() -> void:
 # create words from level sentence array
 func create_words_from_level_sentence():
 	var word_array : Array = LevelSentences.get_level_sentence_array(level)
+	var word_count = 1
 	for word_string in word_array:
 		var word = word_scene.instantiate()
 		add_child(word)
@@ -36,6 +40,13 @@ func create_words_from_level_sentence():
 		if word_string == "." or word_string == "!" or word_string == "?" or word_string == "…" or word_string == ",":
 			word.is_punctuation = true
 			word.disable_button()
+		else:
+			var bonus_zero = ""
+			if word_count < 10:
+				bonus_zero = "0"
+			var word_audio = load("res://assets/speech/" + str(level) + "/-" + bonus_zero + str(word_count) + ".wav")
+			word.set_word_sound(word_audio)
+			word_count += 1
 
 # set up word positions in a centered manner
 # within the maximum width
@@ -117,3 +128,13 @@ func makeIdArray() -> Array:
 
 func get_made_sentence():
 	return makeIdArray()
+
+func play_sentence():
+	currently_playing_sentence = true
+	for c in get_children():
+		if c is WordDest:
+			if c.get_overlapping_word():
+				c.get_overlapping_word().play_word_sound()
+				await c.get_overlapping_word().sound_finished
+	currently_playing_sentence = false
+	finished_playing_sentence.emit()
