@@ -76,6 +76,7 @@ offset_bottom = 30.0
 flat = true
 
 [node name="CloseButton" type="Button" parent="AnimatedSprite2D" unique_id=1396811516]
+visible = false
 offset_left = 45.0
 offset_top = -1.0
 offset_right = 53.0

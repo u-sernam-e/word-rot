@@ -13,6 +13,8 @@ func _on_open_button_pressed() -> void:
 		await animated_sprite_2d.animation_finished
 		
 		stock_image_controller.toggle_use(true)
+		
+		$AnimatedSprite2D/CloseButton.show()
 
 func _on_close_button_pressed() -> void:
 	if is_open == true:
@@ -22,3 +24,5 @@ func _on_close_button_pressed() -> void:
 		
 		animated_sprite_2d.play_backwards("default")
 		await animated_sprite_2d.animation_finished
+		
+		$AnimatedSprite2D/CloseButton.hide()
