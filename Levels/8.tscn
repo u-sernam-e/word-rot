@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dca6kim0gohpu" path="res://Levels/base_level.tscn" id="1_olads"]
 [ext_resource type="PackedScene" uid="uid://c0j8u4dgkkwo7" path="res://ingame/word_controller/word_dest.tscn" id="2_n6pm3"]
 [ext_resource type="PackedScene" uid="uid://2rv663wi4juv" path="res://Levels/9.tscn" id="2_roum6"]
+[ext_resource type="Texture2D" uid="uid://b83jysehgc1m0" path="res://assets/icons/arrow.png" id="3_kmx7c"]
 
 [node name="8" unique_id=743927325 instance=ExtResource("1_olads")]
 
@@ -11,44 +12,101 @@ word_insertion = "promising"
 word_insertion_position = 6
 level = 8
 
-[node name="WordController" parent="GameController" index="0" unique_id=149952642]
-position = Vector2(312, 177)
+[node name="WordDest" parent="GameController/WordController" parent_id_path=PackedInt32Array(149952642) index="0" unique_id=1209687987 instance=ExtResource("2_n6pm3")]
+position = Vector2(-119, 146)
 
-[node name="WordDest" parent="GameController/WordController" index="0" unique_id=1209687987 instance=ExtResource("2_n6pm3")]
-position = Vector2(-168, 167)
+[node name="WordDest2" parent="GameController/WordController" parent_id_path=PackedInt32Array(149952642) index="1" unique_id=2146642757 instance=ExtResource("2_n6pm3")]
+position = Vector2(-15, 146)
 
-[node name="WordDest2" parent="GameController/WordController" index="1" unique_id=1585168076 instance=ExtResource("2_n6pm3")]
-position = Vector2(-64, 167)
+[node name="WordDest3" parent="GameController/WordController" parent_id_path=PackedInt32Array(149952642) index="2" unique_id=577913789 instance=ExtResource("2_n6pm3")]
+position = Vector2(89, 146)
 
-[node name="WordDest3" parent="GameController/WordController" index="2" unique_id=1236052025 instance=ExtResource("2_n6pm3")]
-position = Vector2(40, 167)
+[node name="WordDest4" parent="GameController/WordController" parent_id_path=PackedInt32Array(149952642) index="3" unique_id=646475519 instance=ExtResource("2_n6pm3")]
+position = Vector2(193, 146)
 
-[node name="WordDest4" parent="GameController/WordController" index="3" unique_id=2067840334 instance=ExtResource("2_n6pm3")]
-position = Vector2(144, 167)
+[node name="WordDest5" parent="GameController/WordController" parent_id_path=PackedInt32Array(149952642) index="4" unique_id=384566262 instance=ExtResource("2_n6pm3")]
+position = Vector2(297, 146)
 
-[node name="WordDest5" parent="GameController/WordController" index="4" unique_id=256355652 instance=ExtResource("2_n6pm3")]
-position = Vector2(248, 167)
+[node name="WordDest6" parent="GameController/WordController" parent_id_path=PackedInt32Array(149952642) index="5" unique_id=741321327 instance=ExtResource("2_n6pm3")]
+position = Vector2(401, 146)
 
-[node name="WordDest6" parent="GameController/WordController" index="5" unique_id=172659716 instance=ExtResource("2_n6pm3")]
-position = Vector2(352, 167)
+[node name="WordDest7" parent="GameController/WordController" parent_id_path=PackedInt32Array(149952642) index="6" unique_id=48494569 instance=ExtResource("2_n6pm3")]
+position = Vector2(-119, 202)
 
-[node name="WordDest7" parent="GameController/WordController" index="6" unique_id=1131524431 instance=ExtResource("2_n6pm3")]
-position = Vector2(-168, 223)
+[node name="WordDest8" parent="GameController/WordController" parent_id_path=PackedInt32Array(149952642) index="7" unique_id=1013337177 instance=ExtResource("2_n6pm3")]
+position = Vector2(-15, 202)
 
-[node name="WordDest8" parent="GameController/WordController" index="7" unique_id=282145203 instance=ExtResource("2_n6pm3")]
-position = Vector2(-64, 224)
+[node name="WordDest9" parent="GameController/WordController" parent_id_path=PackedInt32Array(149952642) index="8" unique_id=226949795 instance=ExtResource("2_n6pm3")]
+position = Vector2(89, 202)
 
-[node name="WordDest9" parent="GameController/WordController" index="8" unique_id=1461424161 instance=ExtResource("2_n6pm3")]
-position = Vector2(40, 225)
+[node name="WordDest10" parent="GameController/WordController" parent_id_path=PackedInt32Array(149952642) index="9" unique_id=582281746 instance=ExtResource("2_n6pm3")]
+position = Vector2(193, 202)
 
-[node name="WordDest10" parent="GameController/WordController" index="9" unique_id=1757109402 instance=ExtResource("2_n6pm3")]
-position = Vector2(144, 225)
+[node name="WordDest11" parent="GameController/WordController" parent_id_path=PackedInt32Array(149952642) index="10" unique_id=1849071676 instance=ExtResource("2_n6pm3")]
+position = Vector2(297, 202)
 
-[node name="WordDest11" parent="GameController/WordController" index="10" unique_id=2115152227 instance=ExtResource("2_n6pm3")]
-position = Vector2(248, 225)
+[node name="WordDest12" parent="GameController/WordController" parent_id_path=PackedInt32Array(149952642) index="11" unique_id=1992604884 instance=ExtResource("2_n6pm3")]
+position = Vector2(401, 202)
 
-[node name="WordDest12" parent="GameController/WordController" index="11" unique_id=1619126959 instance=ExtResource("2_n6pm3")]
-position = Vector2(352, 226)
+[node name="Arrow1" type="Sprite2D" parent="GameController/WordController" parent_id_path=PackedInt32Array(149952642) index="12" unique_id=581775120]
+position = Vector2(-71, 146)
+texture = ExtResource("3_kmx7c")
+offset = Vector2(4, 0)
+
+[node name="Arrow2" type="Sprite2D" parent="GameController/WordController" parent_id_path=PackedInt32Array(149952642) index="13" unique_id=1053617198]
+position = Vector2(33, 146)
+texture = ExtResource("3_kmx7c")
+offset = Vector2(4, 0)
+
+[node name="Arrow3" type="Sprite2D" parent="GameController/WordController" parent_id_path=PackedInt32Array(149952642) index="14" unique_id=147737404]
+position = Vector2(137, 146)
+texture = ExtResource("3_kmx7c")
+offset = Vector2(4, 0)
+
+[node name="Arrow4" type="Sprite2D" parent="GameController/WordController" parent_id_path=PackedInt32Array(149952642) index="15" unique_id=1299893503]
+position = Vector2(241, 146)
+texture = ExtResource("3_kmx7c")
+offset = Vector2(4, 0)
+
+[node name="Arrow5" type="Sprite2D" parent="GameController/WordController" parent_id_path=PackedInt32Array(149952642) index="16" unique_id=2101270029]
+position = Vector2(345, 146)
+texture = ExtResource("3_kmx7c")
+offset = Vector2(4, 0)
+
+[node name="Arrow6" type="Sprite2D" parent="GameController/WordController" parent_id_path=PackedInt32Array(149952642) index="17" unique_id=1694379265]
+position = Vector2(-71, 202)
+texture = ExtResource("3_kmx7c")
+offset = Vector2(4, 0)
+
+[node name="Arrow7" type="Sprite2D" parent="GameController/WordController" parent_id_path=PackedInt32Array(149952642) index="18" unique_id=1796810882]
+position = Vector2(33, 202)
+texture = ExtResource("3_kmx7c")
+offset = Vector2(4, 0)
+
+[node name="Arrow8" type="Sprite2D" parent="GameController/WordController" parent_id_path=PackedInt32Array(149952642) index="19" unique_id=982759696]
+position = Vector2(137, 202)
+texture = ExtResource("3_kmx7c")
+offset = Vector2(4, 0)
+
+[node name="Arrow9" type="Sprite2D" parent="GameController/WordController" parent_id_path=PackedInt32Array(149952642) index="20" unique_id=239400402]
+position = Vector2(241, 202)
+texture = ExtResource("3_kmx7c")
+offset = Vector2(4, 0)
+
+[node name="Arrow10" type="Sprite2D" parent="GameController/WordController" parent_id_path=PackedInt32Array(149952642) index="21" unique_id=496828375]
+position = Vector2(345, 202)
+texture = ExtResource("3_kmx7c")
+offset = Vector2(4, 0)
+
+[node name="Arrow11" type="Sprite2D" parent="GameController/WordController" parent_id_path=PackedInt32Array(149952642) index="22" unique_id=918431429]
+position = Vector2(449, 146)
+texture = ExtResource("3_kmx7c")
+offset = Vector2(4, 0)
+
+[node name="Arrow12" type="Sprite2D" parent="GameController/WordController" parent_id_path=PackedInt32Array(149952642) index="23" unique_id=1850525763]
+position = Vector2(-175, 202)
+texture = ExtResource("3_kmx7c")
+offset = Vector2(4, 0)
 
 [node name="LevelEndScreen" parent="." index="6" unique_id=2087576714]
 next_scene = ExtResource("2_roum6")

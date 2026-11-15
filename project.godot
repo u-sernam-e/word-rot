@@ -17,6 +17,7 @@ config/icon="res://icon.svg"
 
 [audio]
 
+buses/default_bus_layout="uid://2mirb3g2fqr2"
 general/text_to_speech=true
 
 [autoload]
