@@ -99,7 +99,7 @@ func _word_button_pressed(word : Word):
 		is_moving_word = false
 	else:
 		if not is_moving_word:
-			if LevelTransition.level_count > 3:
+			if LevelTransition.level_count == 5 or LevelTransition.level_count == 10:
 				TTS._speak(word.text)
 			word.toggle_move()
 			is_moving_word = true
@@ -133,11 +133,19 @@ func get_made_sentence():
 	return makeIdArray()
 
 func play_sentence():
+	var check_insertions: bool = false
+	if not Globals.cur_word_insertion == "empty" and not Globals.cur_word_insertion_idx == -1:
+		check_insertions = true
+	var cur_word = 1
 	currently_playing_sentence = true
 	for c in get_children():
 		if c is WordDest:
 			if c.get_overlapping_word():
 				c.get_overlapping_word().play_word_sound()
 				await c.get_overlapping_word().sound_finished
+				if check_insertions and cur_word == Globals.cur_word_insertion_idx:
+					TTS._speak(Globals.cur_word_insertion)
+					await get_tree().create_timer(0.2).timeout
+				cur_word += 1
 	currently_playing_sentence = false
 	finished_playing_sentence.emit()

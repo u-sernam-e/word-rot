@@ -28,12 +28,12 @@ var level_data : Dictionary = {
 	
 	4 : {
 		"chara" : load("res://assets/characters/lawyer.tres"),
-		"audio" : "place recording here",
+		"audio" : load("res://Audio/speech/4/full.wav"),
 		},
 	
 	5 : {
 		"chara" : load("res://assets/characters/ex_employee.tres"),
-		"audio" : "place recording here",
+		"audio" : load("res://Audio/speech/4/full.wav"), # TESTING
 		},
 	6 : {
 		"chara" : load("res://assets/characters/jen_eric.tres"),
@@ -52,7 +52,7 @@ var level_data : Dictionary = {
 	
 	9 : {
 		"chara" : load("res://assets/characters/lawyer.tres"),
-		"audio" : "place recording here",
+		"audio" : load("res://Audio/speech/9/full.wav"),
 		},
 	
 	10 : {
