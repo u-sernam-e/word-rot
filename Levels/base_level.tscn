@@ -81,7 +81,6 @@ text = "Test"
 visible = false
 
 [node name="base_interview" parent="." unique_id=1915588365 instance=ExtResource("10_npxkb")]
-visible = false
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=850841324]
 
