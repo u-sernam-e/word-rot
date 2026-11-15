@@ -44,7 +44,7 @@ func create_words_from_level_sentence():
 			var bonus_zero = ""
 			if word_count < 10:
 				bonus_zero = "0"
-			var word_audio = load("res://Audio/speech/" + str(level) + "/-" + bonus_zero + str(word_count) + ".wav")
+			var word_audio = load("res://assets/speech/" + str(level) + "/-" + bonus_zero + str(word_count) + ".wav")
 			word.set_word_sound(word_audio)
 			word_count += 1
 

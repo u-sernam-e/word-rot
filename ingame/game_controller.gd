@@ -15,7 +15,6 @@ func _ready() -> void:
 	submit_button.pressed.connect(_submit_button_pressed)
 	test_button.pressed.connect(word_controller.play_sentence)
 	word_controller.level = level
-	LevelTransition.level_count = level
 
 func _process(_delta: float) -> void:
 	submit_button.disabled = not should_enable_submit_button()
