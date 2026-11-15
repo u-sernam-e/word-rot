@@ -4,12 +4,15 @@
 [ext_resource type="PackedScene" uid="uid://c1vniq3fqcrwe" path="res://ingame/game_controller.tscn" id="1_ppyta"]
 [ext_resource type="PackedScene" uid="uid://c0j8u4dgkkwo7" path="res://ingame/word_controller/word_dest.tscn" id="3_ppyta"]
 [ext_resource type="PackedScene" uid="uid://bhgnwyua3kc0c" path="res://ingame/level_end_screen.tscn" id="4_ppyta"]
+[ext_resource type="PackedScene" uid="uid://c4muhs1j44mq4" path="res://ingame/stock_image_controller/StockImageController.tscn" id="5_ykrsh"]
 
 [node name="Test" type="Node2D" unique_id=172724480]
 
-[node name="GameController" parent="." unique_id=120243097 node_paths=PackedStringArray("submit_button", "word_controller", "level_end_screen") instance=ExtResource("1_ppyta")]
+[node name="GameController" parent="." unique_id=120243097 node_paths=PackedStringArray("submit_button", "test_button", "word_controller", "image_controller", "level_end_screen") instance=ExtResource("1_ppyta")]
 submit_button = NodePath("Button2")
+test_button = NodePath("Button2")
 word_controller = NodePath("WordController")
+image_controller = NodePath("../StockImageController")
 level_end_screen = NodePath("../LevelEndScreen")
 level = 2
 
@@ -21,19 +24,15 @@ position = Vector2(-79, 262)
 
 [node name="WordDest2" parent="GameController/WordController" unique_id=1647175048 instance=ExtResource("3_ppyta")]
 position = Vector2(-13, 260)
-pos = 1
 
 [node name="WordDest3" parent="GameController/WordController" unique_id=1553050183 instance=ExtResource("3_ppyta")]
 position = Vector2(117, 248)
-pos = 2
 
 [node name="WordDest4" parent="GameController/WordController" unique_id=1841236255 instance=ExtResource("3_ppyta")]
 position = Vector2(190, 244)
-pos = 3
 
 [node name="WordDest5" parent="GameController/WordController" unique_id=300163562 instance=ExtResource("3_ppyta")]
 position = Vector2(257, 243)
-pos = 4
 
 [node name="Button2" type="Button" parent="GameController" unique_id=166189815]
 offset_left = 873.0
@@ -44,3 +43,5 @@ text = "Submit"
 
 [node name="LevelEndScreen" parent="." unique_id=2087576714 instance=ExtResource("4_ppyta")]
 visible = false
+
+[node name="StockImageController" parent="." unique_id=1795656987 instance=ExtResource("5_ykrsh")]

@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://c410yaoeffmyy" path="res://assets/stockimages/absolute_cinema.png" id="6_jg3su"]
 [ext_resource type="PackedScene" uid="uid://bhgnwyua3kc0c" path="res://ingame/level_end_screen.tscn" id="7_u1nwe"]
 [ext_resource type="PackedScene" uid="uid://du3wpkodr17by" path="res://ingame/stock_image_tab.tscn" id="8_u1nwe"]
+[ext_resource type="PackedScene" uid="uid://dvl3crwupnbj4" path="res://ingame/base_interview.tscn" id="10_npxkb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1j3jd"]
 size = Vector2(282, 165)
@@ -75,5 +76,7 @@ text = "Test"
 
 [node name="LevelEndScreen" parent="." unique_id=2087576714 instance=ExtResource("7_u1nwe")]
 visible = false
+
+[node name="base_interview" parent="." unique_id=1915588365 instance=ExtResource("10_npxkb")]
 
 [connection signal="mouse_entered" from="Timeline" to="." method="_on_timeline_mouse_entered"]
