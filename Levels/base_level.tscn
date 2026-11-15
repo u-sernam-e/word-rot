@@ -48,6 +48,7 @@ image_controller = NodePath("../StockImageTab/StockImageController")
 level_end_screen = NodePath("../LevelEndScreen")
 
 [node name="WordController" parent="GameController" unique_id=149952642 instance=ExtResource("3_ruyyf")]
+position = Vector2(263, 194)
 
 [node name="StockImageTab" parent="." unique_id=1738313370 instance=ExtResource("8_u1nwe")]
 position = Vector2(72, 104)
@@ -80,6 +81,7 @@ text = "Test"
 visible = false
 
 [node name="base_interview" parent="." unique_id=1915588365 instance=ExtResource("10_npxkb")]
+visible = false
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=850841324]
 

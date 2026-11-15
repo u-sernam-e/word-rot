@@ -6,7 +6,7 @@ var currently_playing_sentence = false
 
 var level : int
 @export var center : Vector2
-const MAX_WIDTH : int = 300
+const MAX_WIDTH : int = 345
 
 var words : Array[Word] = []
 const word_scene = preload("res://ingame/word_controller/word.tscn")

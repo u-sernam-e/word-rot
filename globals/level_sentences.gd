@@ -63,7 +63,7 @@ model with no consent already given by the copyright holder \
 and original creator . These companies have to begin \
 respecting my clients IP rights and my client can not go \
 without compensation as outlined in the lawsuit \
-for this questionable behavior .",
+for this questionable behavior",
 	
 	"This company is rotten to its core ! The guilt of what \
 I’ve done as an employee at this company is killing me . \
