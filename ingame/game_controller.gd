@@ -29,6 +29,12 @@ func should_enable_button() -> bool:
 
 func _submit_button_pressed():
 	var sentence = word_controller.get_made_sentence()
+	var words: PackedStringArray = []
+	if LevelTransition.level_count > 3:
+		for word in sentence:
+			if word != null:
+				words.append(str(word))
+		TTS._speak(" ".join(words))
 	var score = LevelSentences.get_word_array_score(sentence, level)
 	level_end_screen.set_score_and_show(score)
 	

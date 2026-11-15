@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bcn0nc7vfbhwu" path="res://globals/audio_manager.gd" id="1_svqv1"]
 [ext_resource type="AudioStream" uid="uid://bfsnkv86std5o" path="res://Audio/RotGameJamSong.wav" id="2_o1fli"]
+[ext_resource type="AudioStream" uid="uid://du7nxn6xwcgok" path="res://Audio/vineboom.wav" id="3_icnap"]
 [ext_resource type="AudioStream" uid="uid://ckqiubw31xlwj" path="res://Audio/soundeffect1.wav" id="3_omxa3"]
 
 [node name="AudioManager" type="Node2D" unique_id=1635330667]
@@ -12,6 +13,9 @@ script = ExtResource("1_svqv1")
 stream = ExtResource("2_o1fli")
 autoplay = true
 bus = &"GameMusic"
+
+[node name="VineBoom" type="AudioStreamPlayer" parent="." unique_id=1640708675]
+stream = ExtResource("3_icnap")
 
 [node name="SoundEffect1" type="AudioStreamPlayer" parent="." unique_id=1825276288]
 stream = ExtResource("3_omxa3")
