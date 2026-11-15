@@ -93,9 +93,9 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_s2q7c")
 fit_content = true
 
 [node name="Continue" type="Button" parent="." unique_id=1743659827]
-offset_left = 738.0
+offset_left = 730.0
 offset_top = 487.0
-offset_right = 951.0
+offset_right = 943.0
 offset_bottom = 531.0
 theme_override_colors/font_disabled_color = Color(0.88, 0.88, 0.88, 0)
 theme_override_font_sizes/font_size = 32
