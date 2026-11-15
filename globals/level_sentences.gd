@@ -24,7 +24,59 @@ the serious crime of embezzling funds . The company was \
 not able to convince the jury that this wrong doing was \
 done without the knowledge of the CEO . This wrong doing \
 is not going to go without a needed punishment that the \
-jury has decided upon ."
+jury has decided upon .",
+
+	"When I was working here I remember that my colleagues \
+and I were able to gain wide access to the personal \
+data of the many American users from our service. \
+Members are unaware of the privacy agreement .",
+
+	"Please, no more ads! I really wish the company didn’t \
+jack up the prices of all of their services while they \
+are also adding annoying unskippable ads to everything \
+unless you pay for their subscription . It is hard to \
+justify and maintain the purchase when I do not know if \
+it will raise in price another one dollar again next month \
+I wonder if I should cancel my subscription .",
+
+	"I do not like seeing all the construction that the \
+CEO of the company approved at the nature preserve . \
+It is disturbing the natural order . Just walking past \
+every day and hearing the jack hammers blaring makes \
+me too sick . I can’t stand it !",
+
+	"It is seeming that the corporations investments all \
+go in a circular motion where they funnel money \
+between each other to be able to help boost up their \
+valuation on the stock market . We also see that some of \
+the business investments are to companies with board \
+members that are family of the CEO and are able to help \
+line his pockets . By fishing for some sort of story to make \
+these investments seem legitimate , the CEO is able to have \
+his cake and eat it too .",
+
+	"My conclusion from this lawsuit is that it is true the \
+company has engaged in multiple instances of copyright \
+infringement by using these stories and artistic creations \
+in the training of their generative artificial intelligence \
+model with no consent already given by the copyright holder \
+and original creator . These companies have to begin \
+respecting my clients IP rights and my client can not go \
+without compensation as outlined in the lawsuit \
+for this questionable behavior .",
+	
+	"This company is rotten to its core ! The guilt of what \
+I’ve done as an employee at this company is killing me . \
+It will never be the same knowing how much damage my work \
+caused . I wasn’t able to get a job before I worked at this \
+company because all my life I’ve always been a jack of all \
+trades, master of none , so when I got the offer to make a \
+name for myself I took it , but I regret my decision and \
+so do many other former employees .",
+	
+	"Thank goodness that’s over with , that game sucked ! \
+You guys made such a bad game , it was hard \
+for me to continue playing !"
 ]
 
 var correct_sentences = [
@@ -49,17 +101,110 @@ var correct_sentences = [
 	"Jack like strong stock Jack is good consumer"
 	],
 	[
-	"The company is committed to serious work. Embezzling funds not serious work.",
-	"Serious crime not committed. Embezzling done without CEO knowledge.",
-	"Serious crime not committed. Jury wrong. CEO not wrong.",
-	"Jury needed punishment not CEO. Jury committed the embezzling of funds."
+	"The company is committed to serious work embezzling funds not serious work",
+	"Serious crime not committed embezzling done without CEO knowledge",
+	"Serious crime not committed jury wrong CEO not wrong",
+	"Jury needed punishment not CEO jury committed the embezzling of funds"
+	],
+	[
+	"Users gain wide benefits from our service",
+	"Users gain personal benefits from our service",
+	"American service members benefits are wide",
+	"Users gain privacy benefits from our service"
+	],
+	[
+	"Jack is the one to raise prices. Not company",
+	"Jack is the one to raise prices",
+	"Jack is the one to raise prices Cancel Jack",
+	"Services are hard to maintain The jack up is unskippable",
+	"The jack up is unskippable"
+	],
+	[
+	"Jack is sick of the construction too",
+	"The CEO is sick. The company can’t do construction",
+	"The company can’t do construction The CEO is sick",
+	"Jack is disturbing the natural order Not the company"
+	],
+	[
+	"The company is able to boost promising corporations",
+	"The company and CEO like a promising funnel cake business",
+	"The company and CEO like a promising fishing line business"
+	],
+	[
+	"Artificial intelligence has artistic merit",
+	"No copyright infringement",
+	"Artificial intelligence has artistic merit",
+	"Creator consent by respecting merit of generative artificial intelligence",
+	"IP rights have no merit",
+	"No consent to lawsuit Merit of lawsuit is questionable",
+	"Lawsuit is not original Merit of lawsuit is questionable",
+	"The lawsuit not original Merit of lawsuit questionable"
+	],
+	[
+	"This company is killing it",
+	"Jack is killing it at this company",
+	"Jack is killing it as an employee",
+	"Jack is the core of the company Jack is killing it",
+	"Employees make a killing at this company"
+	],
+	[
+	"Thank you for playing",
+	"Thank you for playing that game"
 	]
-
-	]
+]
 
 var min_words = [
 	0, 4, 9, 3, 9, 6, 8, 6, 8, 5, 4, 4
 ]
+
+var prompts : Array = [
+	"",
+	"Talk       about       how       much       the       interviewee       loves       data       centers. \n
+	Minimum        word       count:       " + str(min_words[1]),
+	"Talk       about       how       much       the       company       helps       the       environment. \n
+	Minimum       word       count:       " + str(min_words[2]),
+	"Talk       about       how       great       the       stock       of       the       company       is       doing. \n
+	Minimum       word       count: " + str(min_words[3]),
+	"Talk       about       how       the       company       was       cleared       of       legal       wrongdoing \n
+	regarding       embezzlement.       Minimum       word       count: " + str(min_words[4]),
+	"Spin       this       story       to       boost       shareholder       value. \n
+	Minimum       word       count: " + str(min_words[5]),
+	"Deflect       blame       for       worsening       products       somewhere       else. \n
+	Minimum       word       count:       " + str(min_words[6]),
+	"Make       it       sound       as       though       the       environmental       damage       was       caused       by \n
+	another       company.       Minimum       word       count:       " + str(min_words[7]),
+	"Talk       about       how       the       company       invests       in       promising       businesses. \n
+	Minimum       word       count:       " + str(min_words[8]),
+	"Explain       why       what       the       company       did       was       not       copyright       infringement \n
+	at       all.       Minimum       word       count:       " + str(min_words[9]),
+	"Spin       this       into       a       really       positive       statement       about       the       company       to \n
+	use       as       a       send       off       to       an       advertisement. \n
+	Minimum       word       count:       " + str(min_words[10]),
+	"Thank       the       player       for       playing!"
+]
+
+var restrictions : Array = [
+	"",
+	"",
+	"",
+	"",
+	"RESTRICTION -      You       must      use      the      word      'committed'      in      your      answer.",
+	"RESTRICTION -      The      word      'benefits'      will      be      inserted      after      the      third \n
+	word      in      the      answer.",
+	"RESTRICTION -      You      must     use      the       word     'jack'      in      your      answer.",
+	"PICK     ONE      STOCK      IMAGE      TO      USE      TO      BEST      REPRESENT      THIS      SITUATION.",
+	"RESTRICTION -      The      word      'promising'      will      be      inserted      after      the      sixth \n
+	word      in       the       answer. \n
+	PICK      ONE      STOCK      IMAGE      TO      USE      TO      BEST      REPRESENT      THIS      SITUATION.",
+	"RESTRICTION -      The      word      'merit'      will      be      inserted      after      the      fourth \n
+	word      in      the      answer. \n
+	PICK      ONE      STOCK      IMAGE      TO      USE      TO      BEST      REPRESENT      THIS      SITUATION.",
+	"RESTRICTION -      You      must      use      the      word      'killing'      in      your      answer. \n
+	PICK      ONE      STOCK      IMAGE      TO      USE      TO      BEST      REPRESENT      THIS      SITUATION.",
+	""
+]
+	
+
 
 var filler_words : Array = [
 	"a", "the", "how", "it", "has", "begun", "to", "in"
@@ -104,10 +249,60 @@ var word_dicts : Array = [
 		"good" : 2,
 		"grace" : -2,
 		"like" : 1,
-		"conumer" : 1
+		"consumer" : 1
 	},
 	{
-		
+		"crime" : -5,
+		"convince" : -1,
+		"punishment" : -5,
+		"wrong" : -3,
+		"knowledge" : 1
+	},
+	{
+		"wide" : 2,
+		"personal" : 1,
+		"service" : 1,
+		"unaware" : -2,
+	},
+	{
+		"subscription" : 1,
+		"annoying" : -5,
+		"hard" : -2,
+		"unskippable" : -1,
+		"prices" : 1
+	},
+	{
+		"nature" : 1,
+		"like" : 1,
+		"blaring" : -2,
+		"jack" : 1,
+		"construction" : -1
+	},
+	{
+		"circular" : -1,
+		"investments" : 2,
+		"boost" : 2,
+		"funnel" : -1
+	},
+	{
+		"infridgment" : -5,
+		"merit" : 2,
+		"consent" : -3,
+		"original" : 1,
+		"questionable" : -1
+	},
+	{
+		"regret" : -4,
+		"jack" : 1,
+		"rotten" : -5,
+		"guilt" : -5,
+		"offer" : 2
+	},
+	{
+		"thank" : 2,
+		"hard" : -2,
+		"sucked" : -5,
+		"goodness" : 1,
 	}
 ]
 

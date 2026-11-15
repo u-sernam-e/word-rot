@@ -41,12 +41,13 @@ func create_words_from_level_sentence():
 			word.is_punctuation = true
 			word.disable_button()
 		else:
-			var bonus_zero = ""
-			if word_count < 10:
-				bonus_zero = "0"
-			var word_audio = load("res://assets/speech/" + str(level) + "/-" + bonus_zero + str(word_count) + ".wav")
-			word.set_word_sound(word_audio)
-			word_count += 1
+			if level < 3:
+				var bonus_zero = ""
+				if word_count < 10:
+					bonus_zero = "0"
+				var word_audio = load("res://assets/speech/" + str(level) + "/-" + bonus_zero + str(word_count) + ".wav")
+				word.set_word_sound(word_audio)
+				word_count += 1
 
 # set up word positions in a centered manner
 # within the maximum width

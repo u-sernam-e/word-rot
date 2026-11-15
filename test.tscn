@@ -21,19 +21,15 @@ position = Vector2(-79, 262)
 
 [node name="WordDest2" parent="GameController/WordController" unique_id=1647175048 instance=ExtResource("3_ppyta")]
 position = Vector2(-13, 260)
-pos = 1
 
 [node name="WordDest3" parent="GameController/WordController" unique_id=1553050183 instance=ExtResource("3_ppyta")]
 position = Vector2(117, 248)
-pos = 2
 
 [node name="WordDest4" parent="GameController/WordController" unique_id=1841236255 instance=ExtResource("3_ppyta")]
 position = Vector2(190, 244)
-pos = 3
 
 [node name="WordDest5" parent="GameController/WordController" unique_id=300163562 instance=ExtResource("3_ppyta")]
 position = Vector2(257, 243)
-pos = 4
 
 [node name="Button2" type="Button" parent="GameController" unique_id=166189815]
 offset_left = 873.0

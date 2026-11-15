@@ -3,3 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dca6kim0gohpu" path="res://Levels/base_level.tscn" id="1_j2clv"]
 
 [node name="5" unique_id=743927325 instance=ExtResource("1_j2clv")]
+
+[node name="GameController" parent="." index="3" unique_id=120243097 node_paths=PackedStringArray("test_button")]
+test_button = NodePath("../Test")
+level = 5

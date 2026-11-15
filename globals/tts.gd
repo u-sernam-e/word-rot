@@ -10,4 +10,5 @@ func _ready() -> void:
 	voice_id = voices[0]["id"]
 
 func _speak(text: String) -> void:
-	DisplayServer.tts_speak(text, voice_id)
+	if not voices.is_empty():
+		DisplayServer.tts_speak(text, voice_id)
