@@ -6,7 +6,10 @@
 
 [node name="1" unique_id=743927325 instance=ExtResource("1_dhllp")]
 
-[node name="GameController" parent="." index="2" unique_id=120243097 node_paths=PackedStringArray("test_button")]
+[node name="StockImageController" parent="StockImageTab" parent_id_path=PackedInt32Array(1738313370) index="1" unique_id=1795656987]
+position = Vector2(754, 69)
+
+[node name="GameController" parent="." index="3" unique_id=120243097 node_paths=PackedStringArray("test_button")]
 test_button = NodePath("../Test")
 level = 1
 [node name="StockImageController" parent="StockImageTab" parent_id_path=PackedInt32Array(1738313370) index="1" unique_id=1795656987]
