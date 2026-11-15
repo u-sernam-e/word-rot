@@ -34,8 +34,10 @@ func _ready() -> void:
 	next_butt.pressed.connect(_next_pressed)
 
 func _restart_pressed():
+	AudioManager.sound_effect_1.play()
 	get_tree().reload_current_scene()
 func _next_pressed():
+	AudioManager.sound_effect_1.play()
 	LevelTransition.change_scene_to(next_scene.resource_path)
 
 func set_score_and_show(score):

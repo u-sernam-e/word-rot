@@ -41,20 +41,19 @@ func create_words_from_level_sentence():
 			word.is_punctuation = true
 			word.disable_button()
 		else:
-			if not level == 5 and not level == 10:
-				var bonus_zero = ""
-				if word_count < 10:
-					bonus_zero = "0"
-				
-				var word_audio
-				
-				if level == 3 || level == 8:
-					word_audio = load("res://Audio/speech/" + str(level) + "/" + bonus_zero + str(word_count) + ".untitled.wav")
-				else:
-					word_audio = load("res://Audio/speech/" + str(level) + "/-" + bonus_zero + str(word_count) + ".wav")
-				 
-				word.set_word_sound(word_audio)
-				word_count += 1
+			var bonus_zero = ""
+			if word_count < 10:
+				bonus_zero = "0"
+			
+			var word_audio
+			
+			if level == 3 || level == 8:
+				word_audio = load("res://Audio/speech/" + str(level) + "/" + bonus_zero + str(word_count) + ".untitled.wav")
+			else:
+				word_audio = load("res://Audio/speech/" + str(level) + "/-" + bonus_zero + str(word_count) + ".wav")
+			 
+			word.set_word_sound(word_audio)
+			word_count += 1
 
 # set up word positions in a centered manner
 # within the maximum width
@@ -107,8 +106,8 @@ func _word_button_pressed(word : Word):
 		is_moving_word = false
 	else:
 		if not is_moving_word:
-			if LevelTransition.level_count == 5 or LevelTransition.level_count == 10:
-				TTS._speak(word.text)
+			#if LevelTransition.level_count == 5 or LevelTransition.level_count == 10:
+				#TTS._speak(word.text)
 			word.toggle_move()
 			is_moving_word = true
 
@@ -149,10 +148,22 @@ func play_sentence():
 	for c in get_children():
 		if c is WordDest:
 			if c.get_overlapping_word():
+				if AudioManager.benefits.playing:
+					await AudioManager.benefits.finished
+				elif AudioManager.merit.playing:
+					await AudioManager.merit.finished
+				elif AudioManager.promising.playing:
+					await AudioManager.promising.finished
 				c.get_overlapping_word().play_word_sound()
 				await c.get_overlapping_word().sound_finished
 				if check_insertions and cur_word == Globals.cur_word_insertion_idx:
-					TTS._speak(Globals.cur_word_insertion)
+					if Globals.cur_word_insertion == "benefits":
+						AudioManager.benefits.play()
+					elif Globals.cur_word_insertion == "merit":
+						AudioManager.merit.play()
+					elif Globals.cur_word_insertion == "promising":
+						AudioManager.promising.play()
+					#TTS._speak(Globals.cur_word_insertion)
 					#await get_tree().create_timer(0.2).timeout
 				cur_word += 1
 	currently_playing_sentence = false

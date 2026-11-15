@@ -95,5 +95,6 @@ func finished_text():
 
 
 func _on_continue_pressed():
+	AudioManager.sound_effect_5.play()
 	hide()
 	Globals.level_start = true

@@ -61,23 +61,24 @@ func should_enable_submit_button() -> bool:
 	return false
 
 func _submit_button_pressed():
+	AudioManager.sound_effect_2.play()
 	var sentence = word_controller.get_made_sentence()
 	var image = stock_image_controller.get_current_image()
 	
 	Globals.level_start = false
 	
 	var words: PackedStringArray = []
-	if LevelTransition.level_count == 5 or LevelTransition.level_count == 10:
-		for word in sentence:
-			if word != null:
-				words.append(str(word))
-		if not Globals.cur_word_insertion == "empty" and not Globals.cur_word_insertion_idx == -1:
-			words.insert(Globals.cur_word_insertion_idx, Globals.cur_word_insertion)
-		TTS._speak(" ".join(words), TTS.SENTENCE_ID)
-		await TTS.finished_playing_tts
-	else:
-		word_controller.play_sentence()
-		await word_controller.finished_playing_sentence
+
+	for word in sentence:
+		if word != null:
+			words.append(str(word))
+	if not Globals.cur_word_insertion == "empty" and not Globals.cur_word_insertion_idx == -1:
+		words.insert(Globals.cur_word_insertion_idx, Globals.cur_word_insertion)
+	#TTS._speak(" ".join(words), TTS.SENTENCE_ID)
+	#await TTS.finished_playing_tts
+	word_controller.play_sentence()
+	await word_controller.finished_playing_sentence
+	
 	var score = LevelSentences.get_word_array_score(sentence, level)
 	score += LevelSentences.get_stock_image_score(image, level)
 	

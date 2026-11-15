@@ -4,6 +4,13 @@
 [ext_resource type="AudioStream" uid="uid://bfsnkv86std5o" path="res://Audio/RotGameJamSong.wav" id="2_o1fli"]
 [ext_resource type="AudioStream" uid="uid://du7nxn6xwcgok" path="res://Audio/vineboom.wav" id="3_icnap"]
 [ext_resource type="AudioStream" uid="uid://ckqiubw31xlwj" path="res://Audio/soundeffect1.wav" id="3_omxa3"]
+[ext_resource type="AudioStream" uid="uid://dcmvs27888d5k" path="res://Audio/promising.wav" id="5_jbvm7"]
+[ext_resource type="AudioStream" uid="uid://cqrobpbyc1pvb" path="res://Audio/merit.wav" id="6_k8l4j"]
+[ext_resource type="AudioStream" uid="uid://bx0lk82wedyic" path="res://Audio/benefits.wav" id="7_edue3"]
+[ext_resource type="AudioStream" uid="uid://ddc2b5fj6yufi" path="res://Audio/soundeffect2.wav" id="8_0jpoj"]
+[ext_resource type="AudioStream" uid="uid://bb6v0e4vfhdqm" path="res://Audio/soundeffect3.wav" id="9_nggvb"]
+[ext_resource type="AudioStream" uid="uid://c8y5nllbg4a0" path="res://Audio/soundeffect4.wav" id="10_y6ylg"]
+[ext_resource type="AudioStream" uid="uid://dr2rkl8iq841p" path="res://Audio/soundeffect5.wav" id="11_5qco1"]
 
 [node name="AudioManager" type="Node2D" unique_id=1635330667]
 process_mode = 3
@@ -19,3 +26,24 @@ stream = ExtResource("3_icnap")
 
 [node name="SoundEffect1" type="AudioStreamPlayer" parent="." unique_id=1825276288]
 stream = ExtResource("3_omxa3")
+
+[node name="Promising" type="AudioStreamPlayer" parent="." unique_id=206978184]
+stream = ExtResource("5_jbvm7")
+
+[node name="Merit" type="AudioStreamPlayer" parent="." unique_id=805503358]
+stream = ExtResource("6_k8l4j")
+
+[node name="Benefits" type="AudioStreamPlayer" parent="." unique_id=188139291]
+stream = ExtResource("7_edue3")
+
+[node name="SoundEffect2" type="AudioStreamPlayer" parent="." unique_id=359854611]
+stream = ExtResource("8_0jpoj")
+
+[node name="SoundEffect3" type="AudioStreamPlayer" parent="." unique_id=383088718]
+stream = ExtResource("9_nggvb")
+
+[node name="SoundEffect4" type="AudioStreamPlayer" parent="." unique_id=368993364]
+stream = ExtResource("10_y6ylg")
+
+[node name="SoundEffect5" type="AudioStreamPlayer" parent="." unique_id=99040640]
+stream = ExtResource("11_5qco1")
