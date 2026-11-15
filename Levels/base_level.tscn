@@ -9,7 +9,15 @@
 [ext_resource type="Texture2D" uid="uid://c410yaoeffmyy" path="res://assets/stockimages/absolute_cinema.png" id="6_jg3su"]
 [ext_resource type="PackedScene" uid="uid://bhgnwyua3kc0c" path="res://ingame/level_end_screen.tscn" id="7_u1nwe"]
 [ext_resource type="PackedScene" uid="uid://du3wpkodr17by" path="res://ingame/stock_image_tab.tscn" id="8_u1nwe"]
+[ext_resource type="Texture2D" uid="uid://cpfnl7e8q2pcm" path="res://assets/buttons/submit_button.png" id="9_6jk1m"]
+[ext_resource type="Texture2D" uid="uid://cd7iarr38lm84" path="res://assets/buttons/submit_button_pressed.png" id="10_8ftg7"]
 [ext_resource type="PackedScene" uid="uid://dvl3crwupnbj4" path="res://ingame/base_interview.tscn" id="10_npxkb"]
+[ext_resource type="Texture2D" uid="uid://nv46wmqgccne" path="res://assets/buttons/submit_button_hover.png" id="11_x3nl1"]
+[ext_resource type="Texture2D" uid="uid://bpa1m8842h42j" path="res://assets/buttons/submit_button_disabled.png" id="12_x7p1m"]
+[ext_resource type="Texture2D" uid="uid://crpusyqc7547b" path="res://assets/buttons/test_button.png" id="13_x7yg1"]
+[ext_resource type="Texture2D" uid="uid://kabkjalyxhq4" path="res://assets/buttons/test_button_pressed.png" id="14_itp6i"]
+[ext_resource type="Texture2D" uid="uid://dtqp5m06la1rc" path="res://assets/buttons/test_button_hover.png" id="15_5pdpo"]
+[ext_resource type="Texture2D" uid="uid://bpsrik44ihgt" path="res://assets/buttons/test_button_disabled.png" id="16_fmtql"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1j3jd"]
 size = Vector2(282, 165)
@@ -63,19 +71,27 @@ position = Vector2(357, -5)
 scale = Vector2(1e-05, 1e-05)
 texture = ExtResource("6_jg3su")
 
-[node name="Submit" type="Button" parent="." unique_id=1172260094]
-offset_left = 819.0
+[node name="Submit" type="TextureButton" parent="." unique_id=347667698]
+offset_left = 814.0
 offset_top = 210.0
-offset_right = 933.0
-offset_bottom = 243.0
-text = "Submit"
+offset_right = 948.0
+offset_bottom = 244.0
+texture_normal = ExtResource("9_6jk1m")
+texture_pressed = ExtResource("10_8ftg7")
+texture_hover = ExtResource("11_x3nl1")
+texture_disabled = ExtResource("12_x7p1m")
+texture_focused = ExtResource("9_6jk1m")
 
-[node name="Test" type="Button" parent="." unique_id=1601918693]
-offset_left = 832.0
-offset_top = 88.0
-offset_right = 920.0
-offset_bottom = 123.0
-text = "Test"
+[node name="Test" type="TextureButton" parent="." unique_id=2105852425]
+offset_left = 814.0
+offset_top = 87.0
+offset_right = 948.0
+offset_bottom = 122.0
+texture_normal = ExtResource("13_x7yg1")
+texture_pressed = ExtResource("14_itp6i")
+texture_hover = ExtResource("15_5pdpo")
+texture_disabled = ExtResource("16_fmtql")
+texture_focused = ExtResource("13_x7yg1")
 
 [node name="LevelEndScreen" parent="." unique_id=2087576714 instance=ExtResource("7_u1nwe")]
 visible = false

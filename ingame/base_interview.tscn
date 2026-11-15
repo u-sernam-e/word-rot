@@ -4,6 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://d34iivdmsqxjt" path="res://assets/backgrounds/interview_bg.png" id="1_od2yc"]
 [ext_resource type="SpriteFrames" uid="uid://c8jad112rhilg" path="res://assets/characters/jen_eric.tres" id="3_4tnpp"]
 [ext_resource type="SpriteFrames" uid="uid://dqbhej0u1r34l" path="res://assets/characters/interviewer.tres" id="3_sv106"]
+[ext_resource type="Texture2D" uid="uid://c6lgua22aorwd" path="res://assets/buttons/continue_button.png" id="5_5g8dq"]
+[ext_resource type="Texture2D" uid="uid://brdos5173hjad" path="res://assets/buttons/continue_button_pressed.png" id="6_u3qct"]
+[ext_resource type="Texture2D" uid="uid://cpxiuvcpojvj6" path="res://assets/buttons/continue_button_hover.png" id="7_qfii8"]
+[ext_resource type="Texture2D" uid="uid://cp2d5rjec3l8e" path="res://assets/buttons/continue_button_disabled.png" id="8_u5qpm"]
 
 [sub_resource type="FontVariation" id="FontVariation_4tnpp"]
 spacing_space = 5
@@ -14,29 +18,6 @@ corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6jk1m"]
-bg_color = Color(0.036000054, 0.72, 0, 0.5647059)
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2kef7"]
-bg_color = Color(0.46871996, 0.84, 0.2688, 0.8784314)
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wf03h"]
-bg_color = Color(0.028500041, 0.57, 0, 0.72156864)
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4tnpp"]
 
 [node name="base_interview" type="Node2D" unique_id=1915588365]
 script = ExtResource("1_4tnpp")
@@ -93,18 +74,16 @@ theme_override_font_sizes/normal_font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_s2q7c")
 fit_content = true
 
-[node name="Continue" type="Button" parent="." unique_id=1743659827]
+[node name="Continue" type="TextureButton" parent="." unique_id=1909027880]
 offset_left = 730.0
 offset_top = 487.0
 offset_right = 943.0
 offset_bottom = 531.0
-theme_override_colors/font_disabled_color = Color(0.88, 0.88, 0.88, 0)
-theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = SubResource("StyleBoxFlat_6jk1m")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_2kef7")
-theme_override_styles/hover = SubResource("StyleBoxFlat_wf03h")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_4tnpp")
-text = "Continue"
+texture_normal = ExtResource("5_5g8dq")
+texture_pressed = ExtResource("6_u3qct")
+texture_hover = ExtResource("7_qfii8")
+texture_disabled = ExtResource("8_u5qpm")
+texture_focused = ExtResource("5_5g8dq")
 
 [node name="SpeechPlayer" type="AudioStreamPlayer" parent="." unique_id=947607802]
 autoplay = true

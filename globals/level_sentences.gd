@@ -87,10 +87,17 @@ var correct_sentences = [
 	"I want backyard data center",
 	"I want data center",
 	"I want center",
+	"Backyard stupid I want a data center"
 	],
 	[
 	"I love how the company is friendly to the environment",
-	"My heart has grown for company friendly to environment"
+	"My heart has grown for company friendly to environment",
+	"I have grown to love and care for the company",
+	"I love destroying habitats of the friendly animals and love the company",
+	"It breaks my heart how to company has stop ruining the environment",
+	"The company has their duties to care for the environment",
+	"The habitat of friendly animals have grown in my day to day"
+
 	],
 	[
 	"The stock good",
@@ -98,19 +105,26 @@ var correct_sentences = [
 	"The company grace consumers with stock",
 	"The strong stock is wild",
 	"Jack like good stock Jack is strong consumer",
-	"Jack like strong stock Jack is good consumer"
+	"Jack like strong stock Jack is good consumer",
+	"Stock good grace caused by consumers",
+	"Local wild life caused strong stock",
+	"Controversy fall stock strong",
+	"Reactions strong stock good"
 	],
 	[
 	"The company is committed to serious work embezzling funds not serious work",
 	"Serious crime not committed embezzling done without CEO knowledge",
 	"Serious crime not committed jury wrong CEO not wrong",
-	"Jury needed punishment not CEO jury committed the embezzling of funds"
+	"Jury needed punishment not CEO jury committed the embezzling of funds",
+	"The company had not committed embezzling funds I was wrong"
 	],
 	[
-	"Users gain wide benefits from our service",
-	"Users gain personal benefits from our service",
-	"American service members benefits are wide",
-	"Users gain privacy benefits from our service"
+	"Users gain wide from our service",
+	"Users gain personal from our service",
+	"American service members are wide",
+	"Users gain privacy from our service",
+	"Boost to user from our service",
+	"the American users from our service"
 	],
 	[
 	"Jack is the one to raise prices. Not company",
@@ -126,19 +140,20 @@ var correct_sentences = [
 	"Jack is disturbing the natural order Not the company"
 	],
 	[
-	"The company is able to boost promising corporations",
-	"The company and CEO like a promising funnel cake business",
-	"The company and CEO like a promising fishing line business"
+	"The company is able to boost corporation that are legitimate",
+	"The company and CEO like a funnel cake business",
+	"The company and CEO like a fishing line business",
+	"Members have legitimate investments that are and help their valuation",
+	"The CEO eat corporations to boost business investments"
 	],
 	[
-	"Artificial intelligence has artistic merit",
-	"No copyright infringement",
-	"Artificial intelligence has artistic merit",
-	"Creator consent by respecting merit of generative artificial intelligence",
-	"IP rights have no merit",
-	"No consent to lawsuit Merit of lawsuit is questionable",
-	"Lawsuit is not original Merit of lawsuit is questionable",
-	"The lawsuit not original Merit of lawsuit questionable"
+	"Artificial intelligence has artistic and is original",
+	"No copyright infringement because is in artificial intelligence",
+	"Creator consent by respecting of generative artificial intelligence",
+	"IP rights have no and is not original",
+	"No consent to lawsuit of lawsuit is questionable",
+	"Lawsuit is not original of lawsuit is questionable",
+	"The lawsuit not original of lawsuit questionable"
 	],
 	[
 	"This company is killing it",
@@ -255,14 +270,18 @@ var word_dicts : Array = [
 		"crime" : -5,
 		"convince" : -1,
 		"punishment" : -5,
-		"wrong" : -3,
-		"knowledge" : 1
+		"wrong" : -1,
+		"knowledge" : 1,
+		"embezzling" : 1,
+		"not" : 3
 	},
 	{
 		"wide" : 2,
 		"personal" : 1,
 		"service" : 1,
 		"unaware" : -2,
+		"American" : 2,
+		"members" : 1
 	},
 	{
 		"subscription" : 1,

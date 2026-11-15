@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var interviewed: AnimatedSprite2D = $Interviewed
 @onready var speech : RichTextLabel = $TextContainer/Speech
-@onready var continue_butt : Button = $Continue
+@onready var continue_butt : BaseButton = $Continue
 @onready var speech_player : AudioStreamPlayer = $SpeechPlayer
 
 var level_data : Dictionary = {

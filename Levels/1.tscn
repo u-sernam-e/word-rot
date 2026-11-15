@@ -59,7 +59,7 @@ visible = false
 [node name="StockImageController" parent="StockImageTab" index="1" unique_id=1795656987]
 position = Vector2(754, 69)
 
-[node name="Submit" parent="." index="4" unique_id=1172260094]
+[node name="Submit" parent="." index="4" unique_id=347667698]
 disabled = true
 
 [node name="LevelEndScreen" parent="." index="6" unique_id=2087576714]

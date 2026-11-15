@@ -2,7 +2,11 @@
 
 [ext_resource type="Script" uid="uid://3o7f5gr6hio5" path="res://Game/main_menu.gd" id="1_yltbk"]
 [ext_resource type="Texture2D" uid="uid://csc62i5632b4h" path="res://assets/backgrounds/title_screen.png" id="2_nu65f"]
+[ext_resource type="Texture2D" uid="uid://l03qeokykk83" path="res://assets/buttons/start_button.png" id="3_2uogn"]
 [ext_resource type="Texture2D" uid="uid://cdwhqmd24xid6" path="res://assets/stockimages/lmk_dog.png" id="3_nu65f"]
+[ext_resource type="Texture2D" uid="uid://0lmm84yb3e1x" path="res://assets/buttons/start_button_pressed.png" id="4_444o2"]
+[ext_resource type="Texture2D" uid="uid://d0j3j5xtgd1ns" path="res://assets/buttons/start_button_hover.png" id="5_ceu5l"]
+[ext_resource type="Texture2D" uid="uid://blhitr6a4n5a4" path="res://assets/buttons/start_button_disabled.png" id="6_bjiq0"]
 
 [node name="MainMenu" type="CanvasLayer" unique_id=746575195]
 script = ExtResource("1_yltbk")
@@ -29,8 +33,17 @@ grow_vertical = 2
 layout_mode = 2
 text = "    P    L    A    Y"
 
-[node name="PlayGame" type="TextureButton" parent="VBoxContainer" unique_id=1866919362]
-layout_mode = 2
+[node name="PlayGame" type="TextureButton" parent="." unique_id=1866919362]
+offset_left = 764.0
+offset_top = 358.0
+offset_right = 858.0
+offset_bottom = 413.0
+scale = Vector2(1.32, 1.32)
 texture_normal = ExtResource("3_nu65f")
+texture_pressed = ExtResource("4_444o2")
+texture_hover = ExtResource("5_ceu5l")
+texture_disabled = ExtResource("6_bjiq0")
+texture_focused = ExtResource("3_2uogn")
+stretch_mode = 0
 
-[connection signal="pressed" from="VBoxContainer/PlayGame" to="." method="_on_play_game_pressed"]
+[connection signal="pressed" from="PlayGame" to="." method="_on_play_game_pressed"]

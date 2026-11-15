@@ -1,10 +1,18 @@
 [gd_scene format=3 uid="uid://bhgnwyua3kc0c"]
 
 [ext_resource type="Script" uid="uid://k36kdbat05ly" path="res://ingame/level_end_screen.gd" id="1_tb6pa"]
+[ext_resource type="Texture2D" uid="uid://cc88fymrktlgt" path="res://assets/buttons/try_again_button.png" id="2_2c5og"]
 [ext_resource type="Texture2D" uid="uid://cbtoyj4ex6etq" path="res://assets/endscreentextures/youdid.png" id="2_ymx4j"]
+[ext_resource type="Texture2D" uid="uid://dvf7nlew6jy5k" path="res://assets/buttons/try_again_button_pressed.png" id="3_8w6xg"]
 [ext_resource type="Texture2D" uid="uid://bol8g7q8bitc2" path="res://assets/endscreentextures/bad.png" id="3_xdkd7"]
+[ext_resource type="Texture2D" uid="uid://twog6ylsst2j" path="res://assets/buttons/try_again_button_hover.png" id="4_5iv4q"]
 [ext_resource type="Texture2D" uid="uid://coyxa5mdgw4fc" path="res://assets/endscreentextures/okay.png" id="4_45f3u"]
+[ext_resource type="Texture2D" uid="uid://bre3rkoxgflaf" path="res://assets/buttons/try_again_button_disabled.png" id="5_m3vmr"]
 [ext_resource type="Texture2D" uid="uid://bdiyq222iccsq" path="res://assets/endscreentextures/good.png" id="5_wqu78"]
+[ext_resource type="Texture2D" uid="uid://doqmb1bvt61kh" path="res://assets/buttons/next_button.png" id="6_ts2c8"]
+[ext_resource type="Texture2D" uid="uid://badxb3nsdddki" path="res://assets/buttons/next_button_pressed.png" id="7_yu4h8"]
+[ext_resource type="Texture2D" uid="uid://n6bxiyn7fj0y" path="res://assets/buttons/next_button_hover.png" id="8_wqttw"]
+[ext_resource type="Texture2D" uid="uid://gom62oe001nl" path="res://assets/buttons/next_button_disabled.png" id="9_dhoiv"]
 
 [sub_resource type="Animation" id="Animation_yfjx7"]
 length = 0.001
@@ -89,19 +97,27 @@ polygon = PackedVector2Array(-150, -800, 0, 0, 150, -800)
 libraries/ = SubResource("AnimationLibrary_q6iow")
 autoplay = &"RotateLines"
 
-[node name="Restart" type="Button" parent="." unique_id=544009689]
-offset_left = 26.0
-offset_top = 411.0
-offset_right = 254.0
-offset_bottom = 520.0
-text = "Try Again"
+[node name="Restart" type="TextureButton" parent="." unique_id=1731925824]
+offset_left = 16.0
+offset_top = 432.0
+offset_right = 244.0
+offset_bottom = 541.0
+texture_normal = ExtResource("2_2c5og")
+texture_pressed = ExtResource("3_8w6xg")
+texture_hover = ExtResource("4_5iv4q")
+texture_disabled = ExtResource("5_m3vmr")
+texture_focused = ExtResource("2_2c5og")
 
-[node name="Next" type="Button" parent="." unique_id=468174022]
-offset_left = 762.0
-offset_top = 436.0
-offset_right = 945.0
-offset_bottom = 524.0
-text = "Next Level"
+[node name="Next" type="TextureButton" parent="." unique_id=76234351]
+offset_left = 760.0
+offset_top = 432.0
+offset_right = 943.0
+offset_bottom = 520.0
+texture_normal = ExtResource("6_ts2c8")
+texture_pressed = ExtResource("7_yu4h8")
+texture_hover = ExtResource("8_wqttw")
+texture_disabled = ExtResource("9_dhoiv")
+texture_focused = ExtResource("6_ts2c8")
 
 [node name="YouDid" type="Sprite2D" parent="." unique_id=295304691]
 position = Vector2(314, 86)
