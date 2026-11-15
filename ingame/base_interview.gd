@@ -37,7 +37,7 @@ var level_data : Dictionary = {
 		},
 	6 : {
 		"chara" : load("res://assets/characters/jen_eric.tres"),
-		"audio" : "place recording here",
+		"audio" : load("res://Audio/speech/6/full.wav"),
 		},
 	
 	7 : {
@@ -73,7 +73,6 @@ func _ready():
 		speech_player.stream = level_data[LevelTransition.level_count]["audio"]
 	
 	continue_butt.disabled = true
-	continue_butt.pressed.connect(hide)
 	
 	play_interview()
 
@@ -89,3 +88,8 @@ func play_interview():
 
 func finished_text():
 	continue_butt.disabled = false
+
+
+func _on_continue_pressed():
+	hide()
+	Globals.level_start = true

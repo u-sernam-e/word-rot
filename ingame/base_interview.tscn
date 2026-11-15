@@ -108,3 +108,5 @@ text = "Continue"
 [node name="SpeechPlayer" type="AudioStreamPlayer" parent="." unique_id=947607802]
 autoplay = true
 bus = &"GameMusic"
+
+[connection signal="pressed" from="Continue" to="." method="_on_continue_pressed"]
