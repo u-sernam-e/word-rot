@@ -1,9 +1,38 @@
 [gd_scene format=3 uid="uid://c3ssqi3a5dmth"]
 
 [ext_resource type="PackedScene" uid="uid://dca6kim0gohpu" path="res://Levels/base_level.tscn" id="1_j2clv"]
+[ext_resource type="PackedScene" uid="uid://c0j8u4dgkkwo7" path="res://ingame/word_controller/word_dest.tscn" id="2_l5fxt"]
 
 [node name="5" unique_id=743927325 instance=ExtResource("1_j2clv")]
 
-[node name="GameController" parent="." index="3" unique_id=120243097 node_paths=PackedStringArray("test_button")]
-test_button = NodePath("../Test")
+[node name="GameController" parent="." index="2" unique_id=120243097]
+word_insertion = "benefits"
+word_insertion_position = 3
 level = 5
+
+[node name="WordController" parent="GameController" index="0" unique_id=149952642]
+position = Vector2(244, 160)
+
+[node name="WordDest" parent="GameController/WordController" index="0" unique_id=1209687987 instance=ExtResource("2_l5fxt")]
+position = Vector2(-97, 182)
+
+[node name="WordDest2" parent="GameController/WordController" index="1" unique_id=172534344 instance=ExtResource("2_l5fxt")]
+position = Vector2(36, 183)
+
+[node name="WordDest3" parent="GameController/WordController" index="2" unique_id=195233533 instance=ExtResource("2_l5fxt")]
+position = Vector2(180, 184)
+
+[node name="WordDest4" parent="GameController/WordController" index="3" unique_id=999535703 instance=ExtResource("2_l5fxt")]
+position = Vector2(324, 184)
+
+[node name="WordDest5" parent="GameController/WordController" index="4" unique_id=1670854525 instance=ExtResource("2_l5fxt")]
+position = Vector2(-97, 240)
+
+[node name="WordDest6" parent="GameController/WordController" index="5" unique_id=1586414727 instance=ExtResource("2_l5fxt")]
+position = Vector2(36, 241)
+
+[node name="WordDest7" parent="GameController/WordController" index="6" unique_id=802177552 instance=ExtResource("2_l5fxt")]
+position = Vector2(180, 242)
+
+[node name="WordDest8" parent="GameController/WordController" index="7" unique_id=1096806943 instance=ExtResource("2_l5fxt")]
+position = Vector2(324, 243)

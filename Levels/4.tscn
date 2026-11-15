@@ -7,6 +7,7 @@
 [node name="4" unique_id=743927325 instance=ExtResource("1_1qq8a")]
 
 [node name="GameController" parent="." index="2" unique_id=120243097]
+word_restriction = "committed"
 level = 4
 
 [node name="WordController" parent="GameController" index="0" unique_id=149952642]

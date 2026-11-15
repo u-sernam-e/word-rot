@@ -4,9 +4,13 @@ extends Node2D
 @export var test_button : BaseButton
 @export var word_controller : WordController
 @export var image_controller: ImageController
-@onready var stock_image_controller: ImageController = $"../StockImageTab/StockImageController"
-
 @export var level_end_screen : LevelEndScreen
+
+@export var word_restriction: String = "empty" # If same as default values, then that indicates level doesn't use that variable
+@export var word_insertion: String = "empty"
+@export var word_insertion_position: int = -1 # Will insert right after this word (4 would mean insert right after word 4). Starts at 1.
+
+@onready var stock_image_controller: ImageController = $"../StockImageTab/StockImageController"
 
 @export var level : int
 
@@ -16,6 +20,9 @@ func _ready() -> void:
 	test_button.pressed.connect(word_controller.play_sentence)
 	word_controller.level = level
 	LevelTransition.level_count = level
+	Globals.cur_word_restriction = word_restriction
+	Globals.cur_word_insertion = word_insertion
+	Globals.cur_word_insertion_idx = word_insertion_position
 
 func _process(_delta: float) -> void:
 	submit_button.disabled = not should_enable_submit_button()
@@ -39,10 +46,16 @@ func should_enable_submit_button() -> bool:
 	
 	if level < 7 || level == 11:
 		if sentence_no_nulls.size() >= LevelSentences.min_words[level]:
-			return true
+			if (Globals.cur_word_restriction == "empty" or Globals.cur_word_restriction in sentence) and Globals.cur_word_insertion == "empty":
+				return true
+			elif not Globals.cur_word_insertion == "empty" and Globals.cur_word_restriction == "empty":
+				return true
 	elif level >= 7 && level < 11:
 		if sentence_no_nulls.size() >= LevelSentences.min_words[level] && Globals.image_on_timeline == true:
-			return true
+			if (Globals.cur_word_restriction == "empty" or Globals.cur_word_restriction in sentence) and Globals.cur_word_insertion == "empty":
+				return true
+			elif not Globals.cur_word_insertion == "empty" and Globals.cur_word_restriction == "empty":
+				return true
 	
 	return false
 
@@ -51,10 +64,12 @@ func _submit_button_pressed():
 	var image = stock_image_controller.get_current_image()
 	
 	var words: PackedStringArray = []
-	if LevelTransition.level_count > 3:
+	if LevelTransition.level_count == 5 or LevelTransition.level_count == 10:
 		for word in sentence:
 			if word != null:
 				words.append(str(word))
+		if not Globals.cur_word_insertion == "empty" and not Globals.cur_word_insertion_idx == -1:
+			words.insert(Globals.cur_word_insertion_idx, Globals.cur_word_insertion)
 		TTS._speak(" ".join(words))
 	var score = LevelSentences.get_word_array_score(sentence, level)
 	score += LevelSentences.get_stock_image_score(image, level)
