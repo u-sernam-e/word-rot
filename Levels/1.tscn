@@ -9,7 +9,8 @@
 [node name="StockImageController" parent="." index="2" unique_id=1795656987]
 position = Vector2(754, 69)
 
-[node name="GameController" parent="." index="3" unique_id=120243097]
+[node name="GameController" parent="." index="3" unique_id=120243097 node_paths=PackedStringArray("test_button")]
+test_button = NodePath("../Test")
 level = 1
 
 [node name="WordController" parent="GameController" index="0" unique_id=149952642]
